@@ -1,0 +1,83 @@
+/*!
+ *  Copyright (c) 2021. Geniem Oy
+ */
+
+.site-header__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.site-header {
+    position: sticky;
+    top: 1.5rem;
+    z-index: 100;
+    background: linear-gradient( $color-savel-darkgreen, $color-savel-green );
+    color: $navbar-item-navbar-link-color;
+    margin: 1.5rem;
+    border-radius: .75rem;
+
+    .button {
+        outline-color: $white !important;
+    }
+
+    &__wrapper {
+        max-width: $container-max-width;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    &__logo-image {
+        max-width: 10rem;
+
+        @include from($desktop) {
+            max-width: 17.2rem;
+            margin-left: 1.1764rem;
+        }
+
+        > a {
+            &:focus {
+                outline-offset: .2rem;
+                outline: .125rem dotted $white !important;
+            }
+        }
+    }
+
+    #js-search-toggle {
+        margin-right: $theme-spacing-oneandhalf !important;
+        margin-left: $theme-spacing-oneandhalf !important;
+        border: none;
+        padding: .5rem;
+
+        .icon {
+            margin: 0 !important;
+            color: $color-savel-white !important;
+        }
+
+        // &:hover,
+        // &:focus {
+        //     border-color: $white !important;
+        // }
+    }
+
+    &__popup {
+        box-shadow: 0 .0588rem .5rem rgba($black, .1);
+    }
+
+    .search-form {
+        align-items: normal !important;
+
+        &__input {
+            height: 100%;
+        }
+    }
+
+    &__popup {
+        background-color: $color-taide-dark;
+    }
+
+    .popup__label {
+        color: $white;
+    }
+}

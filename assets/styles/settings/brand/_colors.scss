@@ -1,0 +1,31 @@
+@import "functions";
+
+// All Tampere brand colors
+$color-white: #ffffff;
+$color-black: #000000;
+
+// Override Bulma
+$white: $color-white;
+$black: $color-black;
+
+$color-savel-darkgreen: #032502;
+$color-savel-green: #276634;
+$color-savel-white: #F6F7F9;
+$color-savel-blue: #1C6DCF;
+$color-savel-light-blue: #39B6F6;
+
+$color-taide-tiili: #891a45;
+$color-taide-secondary: #f6f6f6;
+$color-taide-roosa: #F4dad8;
+$color-taide-harmaa: #f0f0f0;
+$color-taide-dark: #0D0D0D;
+
+$color-tekstin-vari: #212936;
+$color-ui-border: #414141;
+$color-gray: #a6a7ac;
+
+$color-vaalean-harmaa: #A6A7AC;
+$color-tumma-harmaa: #585857;
+$color-ui-border: #414141;
+$color-gray: #a6a7ac;
+$color-ui-border-light: #767676;

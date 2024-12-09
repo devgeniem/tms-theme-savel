@@ -1,0 +1,103 @@
+.hero {
+    height: auto !important;
+    max-width: $container-max-width;
+    margin: 0 auto;
+
+    &__image-container {
+        position: relative;
+        padding: 0 2rem;
+        grid-row: 1 / -1;
+        grid-column: 1;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+
+        @include from($tablet) {
+            grid-column: 2;
+
+            img {
+                height: 100%;
+                border-radius: 30rem 30rem 0 0;
+                object-fit: cover;
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: -50%;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-image: url('../images/confetti-hero.svg');
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    &__grid-container {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(5, 1fr);
+
+        @include from($tablet) {
+            grid-template-columns: 32.5% 35% 32.5%;
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        .hero-column {
+            &__image {
+                img {
+                    height: 100px;
+                    width: 100px;
+                    object-fit: cover;
+                    mask-repeat: no-repeat;
+                }
+            }
+
+            &:nth-child(1) {
+                .hero-column__image img {
+                    mask-image: url('../images/shape-summertime-sadness.svg');
+                }
+            }
+
+            &:nth-child(2) {
+                .hero-column__image img {
+                    mask-image: url('../images/shape-drop.svg');
+                }
+            }
+
+            &:nth-child(3) {
+                .hero-column__image img {
+                    mask-image: url('../images/shape-soft-flower.svg');
+                }
+            }
+
+            &:nth-child(4) {
+                .hero-column__image img {
+                    mask-image: url('../images/shape-flower.svg');
+                }
+            }
+        }
+    }
+
+    h1 {
+        font-weight: $weight-bold;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @include from($desktop) {
+            font-size: 5.625rem !important; // sass-lint:disable-line no-important
+        }
+    }
+
+    h1,
+    .h3 {
+        font-style: italic;
+    }
+}
