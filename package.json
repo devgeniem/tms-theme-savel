@@ -30,7 +30,7 @@
     "@geniem/geniem-rules-stylelint": "^1.0.4",
     "@wordpress/eslint-plugin": "^9.3.0",
     "ajv": "^6.12.6",
-    "autoprefixer": "^9.8.8",
+    "autoprefixer": "^10.4.20",
     "babel-loader": "^8.3.0",
     "browser-sync": "^2.28.3",
     "browser-sync-webpack-plugin": "^2.3.0",
