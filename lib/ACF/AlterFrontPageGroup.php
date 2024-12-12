@@ -4,7 +4,7 @@ namespace TMS\Theme\Savel\ACF;
 
 use Geniem\ACF\Field;
 use TMS\Theme\Base\ACF\Layouts\HeroLayout as BaseThemeHeroLayout;
-use TMS\Theme\Savel\ACF\Layouts\HeroLayout;
+use TMS\Theme\Savel\ACF\Layouts;
 
 /**
  * Class AlterPageFrontPageGroup
@@ -36,7 +36,8 @@ class AlterPageFrontPageGroup {
             return $layout !== BaseThemeHeroLayout::class;
         } );
 
-        $layouts[] = HeroLayout::class;
+        $layouts[] = Layouts\KeyFiguresLayout::class;
+        $layouts[] = Layouts\HeroLayout::class;
 
         return $layouts;
     }

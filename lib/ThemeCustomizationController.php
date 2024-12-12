@@ -18,11 +18,6 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      * @return void
      */
     public function hooks() : void {
-        \add_filter(
-            'tms/single/related_display_categories',
-            '__return_false',
-        );
-
         \add_filter( 'tms/theme/search/search_item', [ $this, 'event_search_classes' ] );
         \add_filter( 'tms/theme/nav_parent_link_is_trigger_only', '__return_true' );
 
@@ -46,6 +41,15 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
 
             return $data;
         } );
+        \add_filter( 'tms/acf/layout/hero/data', function ( $data ) {
+            $data['button_classes'] = 'is-primary';
+
+            return $data;
+        } );
+        \add_filter( 'tms/acf/layout/content_columns/data',
+            [ $this, 'alter_content_columns_data' ],
+            30
+        );
     }
 
     /**
@@ -160,6 +164,60 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $icon_color_key = $data['background_color'] ?? 'black';
 
         $data['icon_classes'] = $icon_colors_map[ $icon_color_key ];
+
+        return $data;
+    }
+
+    /**
+     * Alter content columns classes.
+     *
+     * @param array $data Block data.
+     *
+     * @return mixed
+     */
+    public function alter_content_columns_data( $data ) {
+        if ( empty( $data['rows'] ) ) {
+            return $data;
+        }
+
+        $aspect_ratios = [
+            '50-50' => [
+                'is-6-desktop',
+                'is-6-desktop',
+            ],
+            '70-30' => [
+                'is-8-desktop',
+                'is-4-desktop',
+            ],
+            '30-70' => [
+                'is-4-desktop',
+                'is-8-desktop',
+            ],
+        ];
+
+        $data['rows'] = array_map( function ( $item ) use ( $aspect_ratios ) {
+            $item['text_col_class'] = [ 'is-6' ];
+            $item['img_col_class']  = [ 'is-6' ];
+            $ratio                  = $item['aspect_ratio'];
+
+            if ( array_key_exists( $ratio, $aspect_ratios ) ) {
+                $item['text_col_class'][] = $aspect_ratios[ $ratio ][0];
+                $item['img_col_class'][]  = $aspect_ratios[ $ratio ][1];
+            }
+
+            if ( $item['layout'] === 'is-text-first' ) {
+                $item['item_class']       = 'is-reversed-tablet is-justify-content-flex-end';
+                $item['text_col_class'][] = '';
+            }
+            else {
+                $item['img_col_class'][] = '';
+            }
+
+            $item['text_col_class'] = implode( ' ', $item['text_col_class'] );
+            $item['img_col_class']  = implode( ' ', $item['img_col_class'] );
+
+            return $item;
+        }, $data['rows'] );
 
         return $data;
     }
