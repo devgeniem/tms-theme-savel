@@ -1,32 +1,29 @@
 // stylelint-disable declaration-no-important
 
-$button-primary-border-color: $primary;
+$button-primary-border-color: $color-savel-darkblue;
 $button-secondary-border-color: $button-primary-border-color;
 
 
 .button {
     font-size: 1.15rem !important;
-    font-weight: 400 !important;
+    font-weight: $weight-bold !important;
+    font-family: $family-primary !important;
     letter-spacing: .06rem !important;
-    text-transform: uppercase;
     border-color: $primary !important;
     padding: .5rem 1.5rem;
 
     &:hover,
     &.is-hovered,
     &:focus,
-    &.is-focused {
+    &.is-focused,
+    &:active {
+        outline: none !important;
         box-shadow: 0 .125rem .375rem rgba(0, 0, 0, .15);
         color: $primary !important;
+        text-decoration: underline !important;
 
-        &:active {
-            background-color: $black !important;
-            color: $white !important;
-            outline: none !important;
-
-            .icon {
-                fill: currentColor !important;
-            }
+        .icon {
+            fill: currentColor !important;
         }
     }
 
@@ -43,6 +40,25 @@ $button-secondary-border-color: $button-primary-border-color;
     }
 
     &.is-primary {
+        background-color: $color-savel-button !important;
+        border-color: $color-savel-button !important;
+        color: $white !important;
+
+        &:hover,
+        &.is-hovered,
+        &:focus,
+        &.is-focused,
+        &:active {
+            background-color: $color-savel-button-hover !important;
+            border-color: $color-savel-button-hover !important;
+            color: $white !important;
+
+            &,
+            .icon {
+                fill: $white !important;
+            }
+        }
+
         &.is-outlined {
             &:hover,
             &:focus {
@@ -69,8 +85,8 @@ $button-secondary-border-color: $button-primary-border-color;
     }
 
     &.is-secondary {
-        background-color: $white !important;
-        color: $black !important;
+        background-color: $secondary !important;
+        color: $secondary-invert !important;
 
         .icon {
             fill: currentColor !important;
@@ -80,8 +96,8 @@ $button-secondary-border-color: $button-primary-border-color;
         &.is-hovered,
         &:focus,
         &.is-focused {
-            border-color: $color-taide-tiili !important;
-            background-color: $color-taide-tiili !important;
+            border-color: $color-savel-darkblue !important;
+            background-color: $color-savel-darkblue !important;
             color: $primary-invert !important;
 
             .icon {
@@ -91,14 +107,33 @@ $button-secondary-border-color: $button-primary-border-color;
     }
 
     &.is-outlined {
-        border-color: $white !important;
+        border-color: $border-light !important;
         background-color: transparent !important;
-        color: $white !important;
+        color: $color-savel-darkblue !important;
 
         &:hover,
         &:focus {
-            background-color: $white !important;
-            color: $black !important;
+            background-color: transparent !important;
+            color: $color-savel-darkblue !important;
+        }
+    }
+
+    &--icon {
+        &.icon-arrow-right-alt {
+            padding-right: 2.5rem !important;
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 1.5rem;
+                height: 100%;
+                bottom: 0;
+                right: .75rem;
+                background-image: url('../images/arrow-right-alt.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+            }
         }
     }
 }

@@ -1,12 +1,16 @@
 .pill {
-    border-width: 1px !important;
-    background-color: $primary;
-    color: $primary-invert;
-    font-size: 1.1rem !important;
+    border-width: 0 !important;
+    background: linear-gradient( $color-savel-green, $color-savel-darkgreen ) !important;
+    color: $white !important;
+    font-family: $family-secondary !important;
+    font-size: 1rem !important;
     letter-spacing: .06rem;
     text-transform: uppercase;
     text-decoration: none !important;
-    font-weight: $weight-normal !important;
+    font-weight: $weight-bold !important;
+    padding: .25rem .5rem !important;
+    border-radius: .5rem;
+    z-index: 1;
 
     .icon {
         fill: currentColor !important;
@@ -16,15 +20,15 @@
     &:not(span) {
         &:hover,
         &:focus {
-            color: $primary !important;
-            background-color: $primary-invert !important;
-            border-color: $primary !important;
+            text-decoration: underline !important;
+            color: $white !important;
+            background: linear-gradient( $color-savel-green, $color-savel-darkgreen ) !important;
+            border-color: transparent !important;
         }
     }
 
     &.is-active {
         &:not(span) {
-           
             &:hover,
             &:focus {
                 background-color: $primary-invert !important;

@@ -45,7 +45,7 @@
             @include from($desktop) {
                 padding-right: $theme-spacing;
                 padding-left: $theme-spacing;
-                border: 1px solid $color-taide-secondary;
+                border: 1px solid $secondary;
             }
         }
 

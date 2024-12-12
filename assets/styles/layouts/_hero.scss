@@ -15,7 +15,7 @@
             border-radius: 1rem;
         }
 
-        @include from($tablet) {
+        @include from($desktop) {
             grid-column: 2;
 
             img {
@@ -32,7 +32,7 @@
                 left: 0;
                 height: 100%;
                 width: 100%;
-                background-image: url('../images/confetti-hero.svg');
+                background-image: url('../images/confetti.svg');
                 background-position: center;
                 background-size: contain;
                 background-repeat: no-repeat;
@@ -44,9 +44,10 @@
         display: grid;
         grid-template-columns: 100%;
         grid-template-rows: repeat(5, 1fr);
+        margin-bottom: 10rem;
 
-        @include from($tablet) {
-            grid-template-columns: 32.5% 35% 32.5%;
+        @include from($desktop) {
+            grid-template-columns: 30% 40% 30%;
             grid-template-rows: repeat(2, 1fr);
         }
 
@@ -55,32 +56,30 @@
                 img {
                     height: 100px;
                     width: 100px;
-                    object-fit: cover;
-                    mask-repeat: no-repeat;
                 }
             }
 
             &:nth-child(1) {
                 .hero-column__image img {
-                    mask-image: url('../images/shape-summertime-sadness.svg');
+                    @extend .shape--summertime-sadness;
                 }
             }
 
             &:nth-child(2) {
                 .hero-column__image img {
-                    mask-image: url('../images/shape-drop.svg');
+                    @extend .shape--drop;
                 }
             }
 
             &:nth-child(3) {
                 .hero-column__image img {
-                    mask-image: url('../images/shape-soft-flower.svg');
+                    @extend .shape--soft-flower;
                 }
             }
 
             &:nth-child(4) {
                 .hero-column__image img {
-                    mask-image: url('../images/shape-flower.svg');
+                    @extend .shape--flower;
                 }
             }
         }
@@ -90,14 +89,14 @@
         font-weight: $weight-bold;
         background-repeat: no-repeat;
         background-size: cover;
-
-        @include from($desktop) {
-            font-size: 5.625rem !important; // sass-lint:disable-line no-important
-        }
     }
 
     h1,
     .h3 {
         font-style: italic;
+    }
+
+    p {
+        max-width: 100% !important;
     }
 }

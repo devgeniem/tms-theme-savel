@@ -1,0 +1,32 @@
+.page {
+    &__hero {
+        display: flex;
+        justify-content: center;
+        height: auto !important;
+
+        .image-container {
+            max-width: 860px;
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 50%;
+                width: 50%;
+                background-image: url('../images/confetti.svg');
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    .entry {
+        &__content {
+            // --
+        }
+    }
+}
