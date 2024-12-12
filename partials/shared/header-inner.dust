@@ -1,5 +1,5 @@
-<div class="site-header__wrapper">
-    <div class="site-header__branding pt-5 pb-5">
+<div class="site-header__wrapper pb-1 pt-1">
+    <div class="site-header__branding">
         {>"shared/header-logo" /}
     </div>
 

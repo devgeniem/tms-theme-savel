@@ -1,14 +1,12 @@
 .site-header__nav {
     border-top: 0px;
     border-bottom: 0 !important;
-
-    nav ul {
-        gap: 1rem;
-    }
 }
 
 .primary-nav {
     justify-content: flex-start;
+    padding: 1.125rem 0 !important;
+    gap: $theme-spacing;
 
     > li {
         @include from($desktop) {
@@ -17,23 +15,30 @@
     }
 
     .navbar-item {
-        border-width: 2px;
+        padding: 0;
+        border-width: 3px;
 
         .navbar-link.dropdown-trigger {
             padding-right: .25rem !important;
+        }
+
+        &.current-menu-item,
+        &.current-menu-parent {
+            background: $navbar-item-navbar-active-bg-color !important;
+            border-bottom-color: rgba(255, 255, 255, .6);
         }
     }
 
     > .navbar-item,
     > .has-dropdown > div > .navbar-link {
-        font-weight: $weight-normal !important;
-        padding: 0;
+        font-weight: $weight-bold !important;
         color: $navbar-item-navbar-link-color !important;
+        font-family: $family-primary;
         text-transform: none;
         letter-spacing: .05rem;
 
         @include from($desktop) {
-            font-size: 1.25rem !important;
+            font-size: 1.125rem !important;
         }
 
         &:hover,
@@ -43,16 +48,16 @@
     }
 
     > .has-dropdown > div > .navbar-link {
-        padding-left: 0;
+        padding: 0;
     }
 
     .navbar-dropdown {
         border-top: none !important;
-        background-color: $color-taide-dark !important;
+        background-color: $color-savel-green !important;
+        border-radius: .75rem;
 
         @include from($desktop) {
-            padding-top: $theme-spacing-two !important;
-            padding-bottom: $theme-spacing-three !important;
+            padding: $theme-spacing !important;
         }
 
         a {
@@ -80,6 +85,7 @@
         .navbar-item {
             background-color: transparent !important;
             font-weight: $weight-medium;
+            border-bottom: none !important;
 
             .icon {
                 width: $theme-spacing-half !important;

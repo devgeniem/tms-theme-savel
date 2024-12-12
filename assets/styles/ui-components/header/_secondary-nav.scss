@@ -2,8 +2,9 @@
     .menu-item-secondary {
         &__link {
             position: relative;
-            font-weight: $weight-normal !important;
-            padding: 0;
+            display: inline-block;
+            font-weight: $weight-bold !important;
+            padding: 0 1.5rem 0 0;
             color: $navbar-item-navbar-link-color !important;
             text-transform: none;
             letter-spacing: .05rem;
@@ -12,10 +13,10 @@
                 content: '';
                 display: block;
                 position: absolute;
-                width: 1rem;
-                height: 1rem;
-                top: 0;
-                left: 0;
+                width: 1.5rem;
+                height: 1.5rem;
+                bottom: .5rem;
+                right: 0;
                 background-image: url('../images/arrow-outward.svg');
             }
 

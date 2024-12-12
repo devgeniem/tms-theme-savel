@@ -2,27 +2,30 @@
  *  Copyright (c) 2021. Geniem Oy
  */
 
-.site-header__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
 .site-header {
     position: sticky;
     top: 1.5rem;
-    z-index: 100;
+    z-index: 6;
     background: linear-gradient( $color-savel-darkgreen, $color-savel-green );
     color: $navbar-item-navbar-link-color;
     margin: 1.5rem;
     border-radius: .75rem;
+    padding: 1rem;
+
+    @include from($widescreen) {
+        padding: 0;
+    }
 
     .button {
         outline-color: $white !important;
     }
 
     &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: $theme-spacing;
         max-width: $container-max-width;
         margin: 0 auto;
         padding: 0 1rem;
@@ -33,7 +36,6 @@
 
         @include from($desktop) {
             max-width: 17.2rem;
-            margin-left: 1.1764rem;
         }
 
         > a {
@@ -54,11 +56,6 @@
             margin: 0 !important;
             color: $color-savel-white !important;
         }
-
-        // &:hover,
-        // &:focus {
-        //     border-color: $white !important;
-        // }
     }
 
     &__popup {
@@ -74,7 +71,7 @@
     }
 
     &__popup {
-        background-color: $color-taide-dark;
+        background-color: $color-savel-green;
     }
 
     .popup__label {

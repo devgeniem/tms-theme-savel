@@ -1,4 +1,4 @@
-<li class="menu-item-secondary is-uppercase is-family-secondary">
+<li class="menu-item-secondary is-uppercase">
     <a class="menu-item-secondary__link" href="{url|url}" target="{target|attr}">
         {title|html}
     </a>

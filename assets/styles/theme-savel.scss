@@ -12,24 +12,24 @@ $primary-dark: $color-black;
 $primary-dark-invert: $color-white;
 
 $secondary: $color-white;
-$secondary-invert: $black;
+$secondary-invert: $color-savel-darkgreen;
 $secondary-light: $white;
-$secondary-light-invert: $black;
+$secondary-light-invert: $color-savel-darkgreen;
 $secondary-dark: $light;
-$secondary-dark-invert: $white;
+$secondary-dark-invert: $color-savel-darkgreen;
 
-$accent: $color-savel-light-blue;
+$accent: $color-savel-blue;
 $accent-invert: $black;
 $accent-light: $white;
 $accent-light-invert: $black;
 $accent-dark: $light;
 $accent-dark-invert: $white;
 
-$light: #f1eeeb;
+$light: $color-savel-lightgreen;
 $light-invert: $black;
 $dark: $primary-dark;
 $dark-invert: $primary-dark-invert;
-$border-light: $color-tekstin-vari;
+$border-light: $color-savel-lightgray;
 
 $divider: $color-vaalean-harmaa;
 $divider-invert: $color-tumma-harmaa;
@@ -72,7 +72,7 @@ $pill-outlined-color: $black;
 
 $pagination-item-color: $black;
 $pagination-item-color-current: $white;
-$pagination-item-background-color: $color-taide-secondary;
+$pagination-item-background-color: $secondary;
 $pagination-item-background-color-hover: $pagination-item-background-color;
 $pagination-item-background-color-focus: $pagination-item-background-color;
 
@@ -91,7 +91,7 @@ $navbar-item-grid-item-border-color: $color-ui-border;
 $navbar-item-navbar-active-bg-color: transparent;
 
 $fly-out-nav-trigger-icon: $white;
-$fly-out-nav-trigger-icon-hover: $color-taide-tiili;
+$fly-out-nav-trigger-icon-hover: $color-savel-darkblue;
 $fly-out-nav-primary-link: $white;
 $fly-out-nav-primary-link-hover: $white;
 $fly-out-nav-primary-dropdown-active-background: $black;
@@ -108,4 +108,8 @@ $duet-color-border: $color-vaalean-harmaa;
 .objecfit-image {
     object-fit: contain;
     height: auto !important;
+}
+
+.background-gradient-savel {
+    background: $savel-gradient-green;
 }
