@@ -1,0 +1,36 @@
+<div class="has-text-centered has-height-100 is-flex is-flex-direction-column is-justify-content-center">
+    {?event.normalized.date}
+        <p class="mt-0 mb-2 h2 has-text-white is-family-secondary">
+            {event.normalized.date|html}
+        </p>
+    {/event.normalized.date}
+
+    {?event.normalized.time}
+        <p class="mt-0 mb-2 h4 has-text-white is-family-secondary">
+            {event.normalized.time|html}
+        </p>
+    {/event.normalized.time}
+
+    {?event.normalized.location}
+        <p class="mt-0 mb-2 has-text-white is-family-secondary">
+            {event.normalized.location.name|html}
+        </p>
+    {/event.normalized.location}
+
+    {?event.normalized.price}
+        {#event.normalized.price}
+            <p class="mt-0 mb-2 has-text-white is-family-secondary">
+                {event.normalized.price_title|html} {price|html}
+            </p>
+        {/event.normalized.price}
+    {/event.normalized.price}
+
+    {?event.normalized.link_purchase_ticket}
+        <div class="has-width-100 mt-3">
+            <a href="{event.normalized.link_purchase_ticket.url|url}" target="_blank"
+                class="is-inline-block button is-small is-primary">
+                {event.normalized.link_purchase_ticket.name|html}
+            </a>
+        </div>
+    {/event.normalized.link_purchase_ticket}
+</div>

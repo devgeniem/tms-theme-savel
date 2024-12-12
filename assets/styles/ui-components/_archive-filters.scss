@@ -63,6 +63,12 @@
 }
 
 .archive-filters {
+    a.is-active {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: .5rem !important;
+    }
+
     &__select-container {
         display: flex;
         flex-direction: column-reverse;

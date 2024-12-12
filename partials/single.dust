@@ -9,7 +9,10 @@
                         {#Single}
                             <article class="entry">
                                 <header class="entry__header">
-                                    <h1 class="entry__title mt-0 mb-8 has-line-height-tight has-text-centered ">
+                                    <p class="mt-0 mb-2 h6 has-text-centered is-family-secondary">
+                                        {@strtodate value=content.post_date format="j.n.Y" /}
+                                    </p>
+                                    <h1 class="entry__title is-size-1 mt-0 mb-8 has-line-height-tight has-text-centered ">
                                         {@title /}
                                     </h1>
 
