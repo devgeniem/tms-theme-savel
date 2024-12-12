@@ -1,18 +1,18 @@
 <section {?anchor}id="{anchor|attr}"{/anchor}
          class="hero has-background-secondary-dark-invert">
 
-    <div class="container pt-6">
+    <div class="container">
         <div class="is-center p-8 pr-8-tablet pl-8-tablet pr-2 pl-2 has-text-centered">
             {?title}
                 <h1
-                class="h1 mt-0 mr-auto mb-5 ml-auto no-hyphens has-text-primary"
+                class="h1 mt-0 mr-auto mb-5 ml-auto no-hyphens"
                 {?title_image}style="background-image: url({title_image.url|attr});background-clip: text;-webkit-text-fill-color: transparent;"{/title_image}>
                     {title|html}
                 </h1>
             {/title}
 
             {?description}
-                <div class="h3 has-text-weight-bold mb-6 has-text-secondary-invert keep-vertical-spacing">
+                <div class="h3 has-text-weight-bold mb-6 keep-vertical-spacing">
                     {description|kses}
                 </div>
             {/description}
@@ -25,13 +25,13 @@
         </div>
     </div>
 
-    <div class="hero__grid-container mb-12">
+    <div class="hero__grid-container ml-4 mr-4">
         {?columns}
             {#columns}
-                <div class="hero-column is-flex is-flex-direction-column has-height-100 p-4">
+                <div class="hero-column p-4">
                     {?image}
-                        <div class="hero-column__image mb-2">
-                            {@image id=image size="small" /}
+                        <div class="hero-column__image mb-3">
+                            {@image id=image size="small" class="shape" /}
                         </div>
                     {/image}
 
@@ -39,11 +39,11 @@
                         {title|html}
                     </p>
 
-                    <p class="m-0 is-family-secondary has-text-large has-text-black">{text|kses}</p>
+                    <p class="m-0">{text|kses}</p>
 
                     {?link}
                         <div class="button-container mt-auto">
-                            {>"ui/button-link" link=link classes="mt-4" icon="chevron-right" icon_classes="icon--medium" /}
+                            {>"ui/button-link" link=link classes="mt-4 is-primary" icon="chevron-right" icon_classes="icon--medium" /}
                         </div>
                     {/link}
                 </div>

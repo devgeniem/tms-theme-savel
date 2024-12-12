@@ -1,8 +1,45 @@
-.single-dynamic-event-cpt {
+.single-dynamic-event-cpt,
+.single-manual-event-cpt {
     .entry {
         &__hero {
             h1 {
                 color: $primary-invert !important;
+            }
+        }
+
+        &__hero-image {
+            object-fit: cover;
+        }
+
+        &__hero-image-credits {
+            @media (min-width: 768px) {
+                position: absolute;
+                left: 0;
+                bottom: -2.5rem;
+            }
+        }
+
+        &__hero-info {
+            position: relative;
+
+            * {
+                position: relative;
+                z-index: 3;
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                z-index: 0;
+                bottom: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-image: url('../images/circle-lines.svg');
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
             }
         }
     }

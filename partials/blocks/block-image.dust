@@ -1,15 +1,15 @@
 {?image}
-    <div {?anchor}id="{anchor}"{/anchor} class="image-block {wrapper_class}">
+    <div {?anchor}id="{anchor}"{/anchor} class="image-block {wrapper_class|attr}">
         <div class="image">
             {>"shared/layout-before-main-content" /}
 
             {?is_clickable}
-                <a href="{image_url_orig}" class="has-modal is-block"
-                   {?image_caption}data-modaal-desc="{image_caption}"{/image_caption}>
-                    {@image id=image.id size="large" alt=image.alt title=image.description /}
+                <a href="{image_url_orig|url}" class="has-modal is-block"
+                   {?image_caption}data-modaal-desc="{image_caption|attr}"{/image_caption}>
+                    {@image id=image.id size="large" alt=image.alt title=image.description class="{image_shape|attr}" /}
                 </a>
             {:else}
-                {@image id=image.id size="large" alt=image.alt title=image.description /}
+                {@image id=image.id size="large" alt=image.alt title=image.description class="{image_shape|attr}" /}
             {/is_clickable}
 
             {>"shared/layout-after-main-content" /}
