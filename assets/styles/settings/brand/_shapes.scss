@@ -1,0 +1,30 @@
+img.shape {
+    object-fit: cover;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+
+    &.shape--summertime-sadness {
+        mask-image: url('../images/shape-summertime-sadness.svg');
+    }
+
+    &.shape--drop {
+        mask-image: url('../images/shape-drop.svg');
+    }
+
+    &.shape--soft-flower {
+        mask-image: url('../images/shape-soft-flower.svg');
+    }
+
+    &.shape--flower {
+        mask-image: url('../images/shape-flower.svg');
+    }
+
+    &.shape--polygon {
+        mask-image: url('../images/shape-polygon.svg');
+    }
+
+    &.shape--rainbow {
+        mask-image: url('../images/shape-rainbow.svg');
+    }
+}
