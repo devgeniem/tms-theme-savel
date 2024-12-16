@@ -38,11 +38,7 @@ class AlterSubpagesFields {
      */
     public function alter_fields( array $fields ) : array {
         try {
-            $fields['background_color']
-                ->set_choices( [
-                    'black' => 'Musta',
-                    'white' => 'Valkoinen',
-                ] );
+            unset( $fields['background_color'] );
         }
         catch ( Exception $e ) {
             ( new Logger() )->error( $e->getMessage(), $e->getTrace() );

@@ -5,7 +5,7 @@
 
     {?caption}
         <div class="image-caption mb-4 mb-8-tablet">
-            {caption|html}
+            {caption|kses}
         </div>
     {/caption}
 {/image}

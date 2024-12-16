@@ -29,12 +29,6 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         \add_filter( 'comment_form_submit_button', [ $this, 'comments_submit' ], 15, 0 );
         \add_filter( 'comment_reply_link', [ $this, 'reply_link_classes' ], 15, 1 );
 
-        \add_filter(
-            'tms/acf/block/subpages/data',
-            [ $this, 'alter_block_subpages_data' ],
-            30
-        );
-
         \add_filter( 'tms/theme/error404/search_link', [ $this, 'error404_search_link' ] );
         \add_filter( 'tms/acf/block/material/data', function ( $data ) {
             $data['button_classes'] = 'is-primary';
@@ -140,32 +134,6 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      */
     public function reply_link_classes( string $link ) : string {
         return str_replace( 'comment-reply-link', 'comment-reply-link is-small', $link );
-    }
-
-    /**
-     * Alter subpages classes.
-     *
-     * @param array $data Block data.
-     *
-     * @return mixed
-     */
-    public function alter_block_subpages_data( $data ) {
-        if ( empty( $data['subpages'] ) ) {
-            return $data;
-        }
-
-        $icon_colors_map = [
-            'black'     => 'is-secondary-invert',
-            'white'     => 'is-primary',
-            'primary'   => 'is-black-invert',
-            'secondary' => 'is-secondary-invert',
-        ];
-
-        $icon_color_key = $data['background_color'] ?? 'black';
-
-        $data['icon_classes'] = $icon_colors_map[ $icon_color_key ];
-
-        return $data;
     }
 
     /**

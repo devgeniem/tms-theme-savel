@@ -11,11 +11,13 @@
     }
 
     &.has-background-primary {
-        background-color: $color-savel-darkblue !important;
+        background-color: $color-savel-darkgreen !important;
         color: $white !important;
     }
 
     &.has-background-secondary {
+        background-color: $color-savel-darkblue !important;
+        color: $white !important;
         border: 1px solid $primary;
     }
 
@@ -33,7 +35,7 @@
 
     &.has-background-secondary {
         .icon.is-large {
-            fill: $color-savel-darkblue !important;
+            fill: $color-white !important;
         }
     }
 }

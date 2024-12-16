@@ -1,5 +1,4 @@
 form {
-    
     select,
     input,
     textarea {
@@ -21,7 +20,7 @@ select {
 }
 
 .container .gform_wrapper {
-    color: $black;
+    color: $color-tekstin-vari;
 
     select,
     input,
@@ -85,7 +84,7 @@ select {
 
 .gfield_checkbox {
 
-    label {      
+    label {
         &::before {
             margin-top: 0.25rem;
         }
@@ -113,7 +112,7 @@ select {
     &:focus {
         border-color: $black !important;
         background-color: $white !important;
-        color: $black !important;
+        color: $color-tekstin-vari !important;
         outline: 0.125rem dotted $black !important;
         outline-offset: 0.25rem !important;
     }

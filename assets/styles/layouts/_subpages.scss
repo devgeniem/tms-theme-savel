@@ -2,6 +2,10 @@
     .post-link {
         border: 1px solid $primary;
 
+        &:not(.has-background-image) {
+            background: $savel-gradient-green !important;
+        }
+
         .icon {
             fill: currentColor !important;
         }
@@ -11,15 +15,6 @@
             letter-spacing: .01em;
             line-height: 141%;
             text-transform: none;
-        }
-
-        &.has-background-black {
-            border: 1px solid $black;
-            color: $white !important;
-        }
-
-        &.has-background-image {
-            border: none !important;
         }
     }
 }

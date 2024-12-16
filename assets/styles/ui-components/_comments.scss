@@ -17,12 +17,12 @@
         }
 
         &__content {
-            color: $black;
+            color: $color-tekstin-vari;
         }
 
         &__author-badge {
             margin-left: $theme-spacing-quarter !important;
-            color: $black;
+            color: $color-tekstin-vari;
             font-size: .95rem !important;
             vertical-align: baseline;
 
@@ -62,7 +62,7 @@
     label {
         display: block;
         margin-bottom: $theme-spacing-quarter;
-        color: $black;
+        color: $color-tekstin-vari;
         font-size: 1.1rem !important;
         font-weight: $weight-normal !important;
     }

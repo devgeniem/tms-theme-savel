@@ -69,18 +69,19 @@ $button-secondary-border-color: $button-primary-border-color;
 
     &.is-primary.is-inverted,
     &.is-primary-invert {
-        border-color: $primary !important;
+        border-color: $color-savel-button !important;
         background-color: $primary-invert !important;
-        color: $primary !important;
+        color: $color-savel-button !important;
 
         &:hover,
         &:focus {
-            border-color: $primary !important;
+            background-color: $color-savel-button !important;
+            border-color: $color-savel-button !important;
         }
 
         &:active {
             background-color: $white !important;
-            color: $black !important;
+            color: $color-savel-button !important;
         }
     }
 

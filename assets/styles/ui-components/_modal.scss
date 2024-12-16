@@ -2,18 +2,21 @@
     .modal-close-button {
         background-color: $white !important;
         color: $black !important;
+
         .icon {
             fill: $black !important;
         }
+
         &:focus {
             outline: 0.125rem dotted $white !important;
             outline-offset: 0.25rem !important;
-            color: $primary !important; // sass-lint:disable-line no-important
+            color: $white !important; // sass-lint:disable-line no-important
             .icon {
-                fill: $primary !important; // sass-lint:disable-line no-important
+                fill: $white !important; // sass-lint:disable-line no-important
             }
         }
-        &:hover{
+
+        &:hover {
             background-color: $black !important;
             color: $white !important;
             outline: 0;

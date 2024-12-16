@@ -57,48 +57,4 @@
             }
         }
     }
-
-    .has-colors-black {
-        .key-figures__number {
-            color: $white;
-        }
-
-        .key-figures__description {
-            color: $white;
-        }
-    }
-
-    .has-colors-light {
-        background-color: $secondary;
-
-        .key-figures__number {
-            color: $black;
-        }
-
-        .key-figures__description {
-            color: $black;
-        }
-    }
-
-    .has-colors-white {
-        .key-figures__number {
-            color: $black;
-        }
-
-        .key-figures__description {
-            color: $black;
-        }
-    }
-
-    .has-colors-red {
-        background-color: $color-savel-darkblue;
-
-        .key-figures__number {
-            color: $white;
-        }
-
-        .key-figures__description {
-            color: $white;
-        }
-    }
 }
