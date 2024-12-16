@@ -22,7 +22,7 @@ $accent: $color-savel-blue;
 $accent-invert: $black;
 $accent-light: $white;
 $accent-light-invert: $black;
-$accent-dark: $light;
+$accent-dark: $color-savel-darkblue;
 $accent-dark-invert: $white;
 
 $light: $color-savel-lightgreen;
@@ -68,9 +68,9 @@ $pill-color-focus: $pill-color;
 $pill-background-color-focus: $pill-background-color;
 $pill-background-color-active: $primary-invert;
 $pill-border-color-hover: $primary;
-$pill-outlined-color: $black;
+$pill-outlined-color: $primary;
 
-$pagination-item-color: $black;
+$pagination-item-color: $primary;
 $pagination-item-color-current: $white;
 $pagination-item-background-color: $secondary;
 $pagination-item-background-color-hover: $pagination-item-background-color;

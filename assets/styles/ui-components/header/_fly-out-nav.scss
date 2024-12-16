@@ -1,8 +1,14 @@
 .fly-out-nav {
-    .dropdown-toggler {
-        .icon {
-            fill: $color-savel-darkblue !important;
+    &__trigger {
+        &:hover {
+            .icon {
+                fill: $white;
+            }
         }
+    }
+
+    &__primary {
+        margin-bottom: $theme-spacing-half;
     }
 
     &__inner {
@@ -16,20 +22,37 @@
 
     .navbar-item {
         letter-spacing: .01em;
+        font-family: $family-primary;
+
+        a {
+            font-size: 1.25rem !important;
+        }
+
+        &.has-dropdown.is-active::after {
+            background-color: $white !important;
+        }
     }
 
-    .menu-item-secondary {
-        letter-spacing: .05em;
+    .secondary-menu {
+        margin: 0 $theme-spacing-two;
+        padding-top: 0;
+        border-top: none;
+
+        .menu-item-secondary {
+            &__link {
+                font-size: 1.25rem !important;
+            }
+        }
     }
 
     .navbar-dropdown {
         @include keep-vertical-spacing;
 
         > .navbar-item {
-            margin: $theme-spacing $theme-spacing-oneandhalf;
+            margin: 0 $theme-spacing-oneandhalf;
             padding-right: 0;
             padding-left: 0;
-            border-bottom: 1px solid $color-ui-border;
+            border-bottom: none;
 
             &:hover,
             &:focus {
@@ -53,9 +76,5 @@
                 border-color: $white !important;
             }
         }
-    }
-
-    .menu-item-secondary__link {
-        font-size: 1.223rem !important;
     }
 }

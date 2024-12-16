@@ -18,10 +18,7 @@
             padding: $theme-spacing-quarter $theme-spacing-half !important;
             background-color: transparent;
             border: none;
-
-            @include from($desktop) {
-                font-size: 1.25rem !important;
-            }
+            font-size: 1rem !important;
 
             &:hover,
             &:focus,
@@ -34,6 +31,7 @@
 
         .icon {
             display: block !important;
+            margin-left: $theme-spacing-half !important;
         }
     }
 
@@ -50,16 +48,14 @@
         .dropdown-content {
             overflow: hidden;
             border-radius: $theme-spacing-half !important;
-            background-color: $color-savel-green !important;
+            background-color: $white !important;
             text-align: center;
 
             .dropdown-item {
-                color: $white;
+                color: $color-savel-blue;
+                font-weight: $weight-bold;
                 padding: $theme-spacing-quarter !important;
-
-                @include from($desktop) {
-                    font-size: 1.25rem !important;
-                }
+                font-size: 1rem !important;
 
                 &,
                 &:hover,

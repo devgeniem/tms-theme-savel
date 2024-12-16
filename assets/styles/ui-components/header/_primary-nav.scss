@@ -16,7 +16,7 @@
 
     .navbar-item {
         padding: 0;
-        border-width: 3px;
+        border-width: 0;
 
         .navbar-link.dropdown-trigger {
             padding-right: .25rem !important;
@@ -26,6 +26,12 @@
         &.current-menu-parent {
             background: $navbar-item-navbar-active-bg-color !important;
             border-bottom-color: rgba(255, 255, 255, .6);
+            border-width: 3px !important;
+            margin-bottom: -3px !important;
+        }
+
+        .dropdown-toggler {
+            padding: 0 $theme-spacing-half !important;
         }
     }
 
@@ -33,13 +39,9 @@
     > .has-dropdown > div > .navbar-link {
         font-weight: $weight-bold !important;
         color: $navbar-item-navbar-link-color !important;
+        font-size: 1rem !important;
         font-family: $family-primary;
         text-transform: none;
-        letter-spacing: .05rem;
-
-        @include from($desktop) {
-            font-size: 1.125rem !important;
-        }
 
         &:hover,
         &:focus {
@@ -52,8 +54,9 @@
     }
 
     .navbar-dropdown {
+        min-width: auto !important;
         border-top: none !important;
-        background-color: $color-savel-green !important;
+        background-color: $white !important;
         border-radius: .75rem;
 
         @include from($desktop) {
@@ -62,8 +65,9 @@
 
         a {
             font-family: $family-primary;
-            color: $primary-invert !important;
+            color: $color-savel-blue !important;
             font-size: 1rem !important;
+            font-weight: $weight-bold !important;
 
         }
 

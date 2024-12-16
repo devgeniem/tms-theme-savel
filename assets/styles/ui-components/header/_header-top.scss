@@ -4,11 +4,11 @@
 
 .site-header {
     position: sticky;
-    top: 1.5rem;
+    top: 2.5rem;
     z-index: 6;
     background: linear-gradient( $color-savel-darkgreen, $color-savel-green );
     color: $navbar-item-navbar-link-color;
-    margin: 1.5rem;
+    margin: 0 1.5rem;
     border-radius: .75rem;
     padding: 1rem;
 
@@ -76,5 +76,10 @@
 
     .popup__label {
         color: $white;
+    }
+
+    &__brand {
+        min-width: 8rem;
+        max-width: 10rem;
     }
 }
