@@ -1,0 +1,11 @@
+.timeline {
+    scroll-behavior: smooth;
+
+    &__row {
+        &:nth-child(even) {
+            .text-container {
+                order: 2;
+            }
+        }
+    }
+}

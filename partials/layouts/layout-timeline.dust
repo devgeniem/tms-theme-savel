@@ -1,0 +1,31 @@
+<div class="container section timeline">
+    <div class="timeline__anchors has-text-centered">
+        {#repeater}
+            {?year}
+                <a href="#timeline-{year|attr}" class="timeline-anchor ml-2 mr-2 has-text-weight-medium">{year|html}</a>
+            {/year}
+        {/repeater}
+    </div>
+    <div {?anchor}id="{anchor|attr}"{/anchor} class="mt-6 mb-6 mt-8-desktop mb-8-desktop">
+        {#repeater}
+            <div id="timeline-{year|attr}" class="timeline__row columns">
+                <div class="text-container column is-flex is-flex-direction-column is-align-items-flex-start is-justify-content-center">
+                    {?year}
+                        <p class="h2 mt-2 mb-2">{year|html}</p>
+                    {/year}
+                    {?title}
+                        <h2 class="h4 mt-2 mb-2 is-family-secondary">{title|html}</h3>
+                    {/title}
+                    {?content}
+                        <p class="mt-2 mb-2">{content|kses}</p>
+                    {/content}
+                </div>
+                <div class="column">
+                    {?image}
+                        {@image id=image.id size="large" class="objectfit-image" /}
+                    {/image}
+                </div>
+            </div>
+        {/repeater}
+    </div>
+</div>
