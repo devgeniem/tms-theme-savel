@@ -62,38 +62,38 @@ class Festival implements PostType {
      * @return void
      */
     public function hooks() : void {
-        \add_action( 'init', Closure::fromCallable( [ $this, 'register' ] ), 15 );
-        \add_filter( 'tms/gutenberg/blocks', Closure::fromCallable( [ $this, 'allowed_blocks' ] ), 10, 1 );
+        // \add_action( 'init', Closure::fromCallable( [ $this, 'register' ] ), 15 );
+        // \add_filter( 'tms/gutenberg/blocks', Closure::fromCallable( [ $this, 'allowed_blocks' ] ), 10, 1 );
 
-        \add_filter(
-            'tms/base/breadcrumbs/before_prepare',
-            Closure::fromCallable( [ $this, 'format_single_breadcrumbs' ] ),
-            10,
-            3
-        );
+        // \add_filter(
+        //     'tms/base/breadcrumbs/before_prepare',
+        //     Closure::fromCallable( [ $this, 'format_single_breadcrumbs' ] ),
+        //     10,
+        //     3
+        // );
 
-        \add_filter( 'redipress/schema_fields', function ( $fields ) {
-            $fields[] = new TextField( [
-                'name'     => 'artists',
-                'sortable' => true,
-            ] );
+        // \add_filter( 'redipress/schema_fields', function ( $fields ) {
+        //     $fields[] = new TextField( [
+        //         'name'     => 'artists',
+        //         'sortable' => true,
+        //     ] );
 
-            return $fields;
-        }, PHP_INT_MAX, 1 );
+        //     return $fields;
+        // }, PHP_INT_MAX, 1 );
 
-        \add_filter( 'redipress/additional_field/artists', function ( $value, $post_id, $post ) {
-            if ( $post->post_type === Festival::SLUG ) {
-                $value = \get_post_meta( $post_id, 'artists', true );
-            }
+        // \add_filter( 'redipress/additional_field/artists', function ( $value, $post_id, $post ) {
+        //     if ( $post->post_type === Festival::SLUG ) {
+        //         $value = \get_post_meta( $post_id, 'artists', true );
+        //     }
 
-            return $value;
-        }, 10, 3 );
+        //     return $value;
+        // }, 10, 3 );
 
-        \add_filter( 'redipress/search_fields', function ( $fields ) {
-            $fields[] = 'artists';
+        // \add_filter( 'redipress/search_fields', function ( $fields ) {
+        //     $fields[] = 'artists';
 
-            return $fields;
-        } );
+        //     return $fields;
+        // } );
     }
 
     /**
@@ -165,7 +165,7 @@ class Festival implements PostType {
             'show_in_menu'    => true,
             'show_ui'         => true,
             'can_export'      => true,
-            'has_archive'     => false,
+            'has_archive'     => true,
             'rewrite'         => $rewrite,
             'show_in_rest'    => true,
             'capability_type' => 'festival',

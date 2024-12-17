@@ -57,8 +57,8 @@ class AlterSettingsGroup {
      */
     protected function register_theme_tabs( array $fields, string $key ) : array {
         try {
-            $fields[] = new Fields\Settings\FestivalSettingsTab( '', $key );
-            $fields[] = new Fields\Settings\ArtistSettingsTab( '', $key );
+            // $fields[] = new Fields\Settings\FestivalSettingsTab( '', $key );
+            // $fields[] = new Fields\Settings\ArtistSettingsTab( '', $key );
         }
         catch ( Exception $e ) {
             ( new Logger() )->error( $e->getMessage(), $e->getTraceAsString() );

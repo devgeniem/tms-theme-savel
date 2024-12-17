@@ -39,24 +39,6 @@ class SingleArtist extends BaseModel {
             $additional_information = [];
         }
 
-        $death_year = \get_field( 'death_year' ); // TODO: REMOVE
-
-        if ( ! empty( $death_year ) ) {
-            array_unshift( $additional_information, [
-                'additional_information_title' => __( 'Death year', 'tms-theme-savel' ),
-                'additional_information_text'  => $death_year,
-            ] );
-        }
-
-        $birth_year = \get_field( 'birth_year' ); // TODO: REMOVE
-
-        if ( ! empty( $birth_year ) ) {
-            array_unshift( $additional_information, [
-                'additional_information_title' => __( 'Birth year', 'tms-theme-savel' ),
-                'additional_information_text'  => $birth_year,
-            ] );
-        }
-
         return $additional_information;
     }
 
@@ -71,7 +53,6 @@ class SingleArtist extends BaseModel {
 
     /**
      * Get related festivals
-     * TODO: REMOVE
      *
      * @return array|null
      */
@@ -116,13 +97,5 @@ class SingleArtist extends BaseModel {
         return strlen( $item_excerpt ) > $excerpt_length
             ? \wp_trim_words( $item_excerpt, $excerpt_length, '...' )
             : $item_excerpt;
-    }
-
-    /**
-     * Get related art title
-     * TODO: REMOVE
-     */
-    public function related_art() : string {
-        return __( 'Related art', 'tms-theme-savel' );
     }
 }

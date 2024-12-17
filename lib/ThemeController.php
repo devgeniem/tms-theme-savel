@@ -2,7 +2,7 @@
 
 namespace TMS\Theme\Savel;
 
-use ArchiveExhibition;
+// use ArchiveFestival;
 use TMS\Theme\Base\Interfaces;
 
 /**
@@ -36,7 +36,7 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
         } );
 
         \add_action( 'init', function () {
-            ArchiveExhibition::hooks();
+            // ArchiveFestival::hooks();
         } );
     }
 }

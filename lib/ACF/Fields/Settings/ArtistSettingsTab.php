@@ -28,7 +28,7 @@ class ArtistSettingsTab extends Tab {
      * @var array
      */
     protected $strings = [
-        'tab'                         => 'Taiteilijat',
+        'tab'                         => 'Artistit',
         'artist_additional_info'      => [
             'title'        => 'Esitäytetyt lisätiedot',
             'instructions' => '',
@@ -38,7 +38,7 @@ class ArtistSettingsTab extends Tab {
             'instructions' => '',
         ],
         'artist_archive_page'         => [
-            'title'        => 'Taiteilijoiden arkistosivu',
+            'title'        => 'Artistien arkistosivu',
             'instructions' => '',
         ],
     ];

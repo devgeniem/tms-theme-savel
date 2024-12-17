@@ -2,7 +2,7 @@
 
 namespace TMS\Theme\Savel;
 
-use ArchiveExhibition;
+// use ArchiveExhibition;
 use Closure;
 use PageArtist;
 use PageFestival;
@@ -42,10 +42,10 @@ class ThemeSupports implements Controller {
      * @return array
      */
     protected function query_vars( $vars ) {
-        $vars[] = ArchiveExhibition::SEARCH_QUERY_VAR;
-        $vars[] = ArchiveExhibition::YEAR_QUERY_VAR;
-        $vars[] = ArchiveExhibition::PAST_QUERY_VAR;
-        $vars[] = ArchiveExhibition::UPCOMING_QUERY_VAR;
+        // $vars[] = ArchiveExhibition::SEARCH_QUERY_VAR;
+        // $vars[] = ArchiveExhibition::YEAR_QUERY_VAR;
+        // $vars[] = ArchiveExhibition::PAST_QUERY_VAR;
+        // $vars[] = ArchiveExhibition::UPCOMING_QUERY_VAR;
 
         $vars[] = PageArtist::SEARCH_QUERY_VAR;
         $vars[] = PageArtist::FILTER_QUERY_VAR;

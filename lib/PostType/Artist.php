@@ -62,21 +62,21 @@ class Artist implements PostType {
      * @return void
      */
     public function hooks() : void {
-        \add_action( 'init', Closure::fromCallable( [ $this, 'register' ] ), 15 );
-        \add_filter( 'tms/gutenberg/blocks', Closure::fromCallable( [ $this, 'allowed_blocks' ] ), 10, 1 );
-        \add_filter(
-            'tms/base/breadcrumbs/before_prepare',
-            Closure::fromCallable( [ $this, 'format_single_breadcrumbs' ] ),
-            10,
-            3
-        );
-        \add_filter(
-            'tms/base/breadcrumbs/after_prepare',
-            Closure::fromCallable( [ $this, 'format_archive_breadcrumbs' ] ),
-        );
-        \add_action( 'acf/save_post', [ $this, 'update_related_festival' ] );
-        \add_action( 'wp_trash_post', [ $this, 'delete_related_festival' ] );
-        \add_action( 'before_delete_post', [ $this, 'delete_related_festival' ] );
+        // \add_action( 'init', Closure::fromCallable( [ $this, 'register' ] ), 15 );
+        // \add_filter( 'tms/gutenberg/blocks', Closure::fromCallable( [ $this, 'allowed_blocks' ] ), 10, 1 );
+        // \add_filter(
+        //     'tms/base/breadcrumbs/before_prepare',
+        //     Closure::fromCallable( [ $this, 'format_single_breadcrumbs' ] ),
+        //     10,
+        //     3
+        // );
+        // \add_filter(
+        //     'tms/base/breadcrumbs/after_prepare',
+        //     Closure::fromCallable( [ $this, 'format_archive_breadcrumbs' ] ),
+        // );
+        // \add_action( 'acf/save_post', [ $this, 'update_related_festival' ] );
+        // \add_action( 'wp_trash_post', [ $this, 'delete_related_festival' ] );
+        // \add_action( 'before_delete_post', [ $this, 'delete_related_festival' ] );
     }
 
     /**

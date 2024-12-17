@@ -39,16 +39,7 @@ class SingleFestival extends SingleArtist {
      * @return array|mixed
      */
     public function additional_info() {
-        $info_rows = ! empty( \get_field( 'additional_information' ) ) ? get_field( 'additional_information' ) : [];
-
-        $artist_location_group = $this->get_info_group_location();
-
-        if ( ! empty( $artist_location_group ) ) {
-            array_unshift(
-                $info_rows,
-                $artist_location_group
-            );
-        }
+        $info_rows = ! empty( \get_field( 'additional_information' ) ) ? \get_field( 'additional_information' ) : [];
 
         $artist_name_group = $this->get_info_group_artist_name();
 
@@ -59,12 +50,12 @@ class SingleFestival extends SingleArtist {
             );
         }
 
-        $artwork_year_group = $this->get_info_group_artwork_year();
+        $festival_year_group = $this->get_info_group_festival_year();
 
-        if ( ! empty( $artwork_year_group ) ) {
+        if ( ! empty( $festival_year_group ) ) {
             array_unshift(
                 $info_rows,
-                $artwork_year_group
+                $festival_year_group
             );
         }
 
@@ -72,40 +63,21 @@ class SingleFestival extends SingleArtist {
     }
 
     /**
-     * Get related artwork.
+     * Get related festival.
      *
      * @return array|null
      */
-    public function artwork() : ?array {
-        $artwork    = parent::artwork();
-        $current_id = get_the_ID();
+    public function festival() : ?array {
+        $festival    = parent::festivals();
+        $current_id = \get_the_ID();
 
-        if ( empty( $artwork ) ) {
+        if ( empty( $festival ) ) {
             return null;
         }
 
-        return array_filter( $artwork, function ( $item ) use ( $current_id ) {
+        return array_filter( $festival, function ( $item ) use ( $current_id ) {
             return $item->ID !== $current_id;
         } );
-    }
-
-    /**
-     * Get info group artwork location.
-     *
-     * @return array[]|null
-     */
-    protected function get_info_group_location() : ?array {
-        $group          = null;
-        $location_terms = wp_get_post_terms( get_the_ID(), ArtworkLocation::SLUG, [ 'fields' => 'names' ] );
-
-        if ( ! empty( $location_terms ) && ! is_wp_error( $location_terms ) ) {
-            $group = $this->format_info_group(
-                _x( 'Location', 'theme-frontend', 'tms-theme-savel' ),
-                implode( ', ', $location_terms )
-            );
-        }
-
-        return $group;
     }
 
     /**
@@ -122,11 +94,10 @@ class SingleFestival extends SingleArtist {
         }
 
         foreach ( $artist_ids as $artist_id ) {
-            $first_name = get_field( 'first_name', $artist_id );
-            $last_name  = get_field( 'last_name', $artist_id );
+            $artist_name = \get_the_title( $artist_id );
 
             if ( ! empty( $first_name ) || ! empty( $last_name ) ) {
-                $artist_names[] = trim( $first_name . ' ' . $last_name );
+                $artist_names[] = $artist_name;
             }
         }
 
@@ -142,16 +113,16 @@ class SingleFestival extends SingleArtist {
     }
 
     /**
-     * Get info group artwork year
+     * Get info group festival year
      *
      * @return array[]|string[]|null
      */
-    public function get_info_group_artwork_year() {
-        $year = get_field( 'year' );
+    public function get_info_group_festival_year() {
+        $year = \get_field( 'year' );
 
         if ( ! empty( $year ) ) {
             return $this->format_info_group(
-                __( 'Year of manufacture', 'tms-theme-savel' ),
+                __( 'Year', 'tms-theme-savel' ),
                 $year
             );
         }
@@ -180,9 +151,9 @@ class SingleFestival extends SingleArtist {
      * @return array
      */
     public function image_gallery() : array {
-        $gallery_field = ! empty( get_field( 'images' ) ) ? get_field( 'images' ) : [];
+        $gallery_field = ! empty( \get_field( 'images' ) ) ? \get_field( 'images' ) : [];
 
-        if ( has_post_thumbnail() ) {
+        if ( \has_post_thumbnail() ) {
             array_unshift( $gallery_field, $this->get_featured_media_gallery_item() );
         }
 
@@ -193,12 +164,12 @@ class SingleFestival extends SingleArtist {
                 'image'        => $item,
             ] );
 
-            $item['id'] = wp_unique_id( 'image-gallery-item-' );
+            $item['id'] = \wp_unique_id( 'image-gallery-item-' );
 
             return $item;
         }, $gallery_field );
 
-        $data['gallery_id']   = wp_unique_id( 'image-gallery-' );
+        $data['gallery_id']   = \wp_unique_id( 'image-gallery-' );
         $data['translations'] = ( new \Strings() )->s()['gallery'] ?? [];
 
         return $data;
@@ -210,14 +181,14 @@ class SingleFestival extends SingleArtist {
      * @return array|WP_Post|null
      */
     protected function get_featured_media_gallery_item() {
-        $featured_media_id = get_post_thumbnail_id();
+        $featured_media_id = \get_post_thumbnail_id();
 
         if ( function_exists( 'acf_get_attachment' ) ) {
-            return acf_get_attachment( $featured_media_id );
+            return \acf_get_attachment( $featured_media_id );
         }
 
-        $img_src           = wp_get_attachment_image_src( $featured_media_id, 'fullhd' );
-        $img_post          = get_post( $featured_media_id, ARRAY_A );
+        $img_src           = \wp_get_attachment_image_src( $featured_media_id, 'fullhd' );
+        $img_post          = \get_post( $featured_media_id, ARRAY_A );
         $img_post['sizes'] = [
             'fullhd'        => $img_src[0],
             'fullhd-width'  => $img_src[1],
@@ -237,48 +208,44 @@ class SingleFestival extends SingleArtist {
             return false;
         }
 
-        $has_multiple = count( $artists ) > 1;
-        $link_classes = count( $artists ) > 1
-            ? 'single-artwork__artist-link'
-            : 'single-artwork__artist-button button is-primary button--icon';
-
-        return array_map( function ( $artist ) use ( $has_multiple, $link_classes ) {
-            $view_artists_text = __( 'View artist', 'tms-theme-savel' );
-
-            if ( $has_multiple ) {
-                $view_artists_text .= ' ' . get_the_title( $artist );
+        return array_map( function ( $artist ) {
+            $description       = \get_field( 'short_description', $artist );
+            $featured_media_id = \get_post_thumbnail_id( $artist );
+            if ( $featured_media_id === 0 ) {
+                $featured_media_id = false;
             }
 
             return [
-                'classes' => $link_classes,
-                'link'    => get_permalink( $artist ),
-                'text'    => $view_artists_text,
+                'link'        => \get_permalink( $artist ),
+                'name'        => \get_the_title( $artist ),
+                'image_id'    => $featured_media_id,
+                'description' => $description,
             ];
         }, $artists );
     }
 
     /**
-     * Get artwork artist ID.
+     * Get festival artist ID.
      *
      * @return array
      */
-    protected function get_artwork() : array {
+    protected function get_festival() : array {
         $map     = $this->get_artist_map();
-        $artwork = [];
+        $festival = [];
 
-        foreach ( $map as $map_artworks ) {
-            foreach ( $map_artworks as $map_artwork ) {
-                if ( ! in_array( $map_artwork, $artwork ) ) { // phpcs:ignore
-                    $artwork[] = $map_artwork;
+        foreach ( $map as $map_festivals ) {
+            foreach ( $map_festivals as $map_festival ) {
+                if ( ! in_array( $map_festival, $festival ) ) { // phpcs:ignore
+                    $festival[] = $map_festival;
                 }
             }
         }
 
-        return $artwork;
+        return $festival;
     }
 
     /**
-     * Get artworks artists map
+     * Get festivals artists map
      *
      * @return array
      */
@@ -290,22 +257,22 @@ class SingleFestival extends SingleArtist {
         }
 
         $map        = [];
-        $current_id = get_the_ID();
+        $current_id = \get_the_ID();
 
         foreach ( $artists as $artist ) {
-            $artworks = get_field( 'artwork', $artist->ID );
+            $festivals = \get_field( 'festivals', $artist->ID );
 
-            if ( empty( $artworks ) ) {
+            if ( empty( $festivals ) ) {
                 continue;
             }
 
-            $artwork_ids = array_map( function ( $artwork_item ) {
-                return $artwork_item->ID;
-            }, $artworks );
+            $festival_ids = array_map( function ( $festival_item ) {
+                return $festival_item->ID;
+            }, $festivals );
 
-            if ( in_array( $current_id, $artwork_ids, true ) ) {
-                foreach ( $artworks as $artwork ) {
-                    $map[ $artist->ID ][] = $artwork;
+            if ( in_array( $current_id, $festival_ids, true ) ) {
+                foreach ( $festivals as $festival ) {
+                    $map[ $artist->ID ][] = $festival;
                 }
             }
         }
