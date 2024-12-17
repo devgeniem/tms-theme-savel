@@ -4,6 +4,7 @@
 
         &:not(.has-background-image) {
             background: $savel-gradient-green !important;
+            color: $white !important;
         }
 
         .icon {

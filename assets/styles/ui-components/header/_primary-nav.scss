@@ -15,6 +15,7 @@
     }
 
     .navbar-item {
+        position: relative;
         padding: 0;
         border-width: 0;
 
@@ -54,6 +55,7 @@
     }
 
     .navbar-dropdown {
+        width: 200px !important;
         min-width: auto !important;
         border-top: none !important;
         background-color: $white !important;

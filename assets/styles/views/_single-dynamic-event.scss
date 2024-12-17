@@ -42,5 +42,25 @@
                 background-repeat: no-repeat;
             }
         }
+
+        &__info-group {
+            position: relative;
+            background-color: $color-savel-lightgreen;
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                z-index: 2;
+                top: -80px;
+                left: -40px;
+                height: 140px;
+                width: 140px;
+                background-image: url('../images/confetti.svg');
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
     }
 }
