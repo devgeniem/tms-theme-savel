@@ -6,19 +6,21 @@
     </div>
 
 
-    <div class="overlay {?image.id} overlay--dark-40 {:else} has-background-black {/image.id}"></div>
+    <div class="overlay {?image.id} overlay--dark-40 {:else} has-background-primary {/image.id}"></div>
 
     <div class="grid__item__details is-order-0 has-text-left is-absolute has-bottom-0 pb-7 pr-6 pl-6 has-text-white">
         {?title}
-            <h3 class="h4 mb-0 has-text-white">{title}</h3>
+            <h3 class="h4 mb-0 has-text-white">{title|html}</h3>
         {/title}
 
         {?description}
-            <p class="has-text-small has-text-white mt-3 mb-0 mt-5-tablet">{description|s}</p>
+            <p class="has-text-small has-text-white mt-3 mb-0 mt-5-tablet">{description|kses}</p>
         {/description}
 
         {?link}
-            <a href="{link.url}" target="{link.target}" class="button is-small has-width-fit-content is-primary is-inverted ml-0 mt-4 mt-5-tablet">{link.title}</a>
+            <a href="{link.url|url}" target="{link.target|attr}" class="button is-small has-width-fit-content is-primary is-inverted ml-0 mt-4 mt-5-tablet">
+                {link.title|html}
+            </a>
         {/link}
     </div>
 </div>

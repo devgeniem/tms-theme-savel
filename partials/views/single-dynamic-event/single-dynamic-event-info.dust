@@ -1,95 +1,103 @@
 {?event.normalized.date}
-    <div class="info-group mb-5 has-border-gray has-border-1 {template_classes.info_group|s}">
+    <div class="info-group column is-8 is-offset-2 has-border-none">
         {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.date_title template_classes=template_classes.info_group_title icon="date" /}
 
-        <div class="info-group__description has-text-small has-text-small pt-1 pr-8 pb-4 pl-9">
+        <p class="info-group__description m-0 has-text-small has-text-small pt-1 pr-4 pb-2 pl-4">
             {event.normalized.date|s}
-        </div>
+        </p>
     </div>
 {/event.normalized.date}
 
 {?event.normalized.time}
-    <div class="info-group mb-5 has-border-gray has-border-1 {template_classes.info_group|s}">
+    <div class="info-group column is-8 is-offset-2 has-border-none">
         {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.time_title template_classes=template_classes.info_group_title icon="time" /}
 
-        <div class="info-group__description has-text-small has-text-small pt-1 pr-8 pb-4 pl-9">
-            {event.normalized.time|s}
-        </div>
+        <p class="info-group__description m-0 has-text-small has-text-small pt-1 pr-4 pb-2 pl-4">
+            {event.normalized.time|html}
+        </p>
     </div>
 {/event.normalized.time}
 
 {?event.normalized.location}
-    <div class="info-group mb-5 has-border-gray has-border-1 {template_classes.info_group|s}">
+    <div class="info-group column is-8 is-offset-2 has-border-none">
         {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.location_title template_classes=template_classes.info_group_title icon="location" /}
 
-        <div class="info-group__description has-text-small has-text-small pt-1 pr-8 pb-4 pl-9">
-            <div>{event.normalized.location.name|s}</div>
-            <div>{event.normalized.location.description|s}</div>
-            <div>{event.normalized.location.extra_info|s}</div>
-            {>"ui/link" link=event.normalized.location.info_url classes="is-inline-block mt-2" /}
+        <div class="info-group__description has-text-small has-text-small pt-1 pr-4 pb-2 pl-4">
+            <p class="m-0">{event.normalized.location.name|html}</p>
+            <p class="m-0">{event.normalized.location.description|html}</p>
+            <p class="m-0">{event.normalized.location.extra_info|html}</p>
+            {>"ui/link" link=event.normalized.location.info_url classes="is-inline-block mt-2 has-text-weight-bold" /}
         </div>
     </div>
 {/event.normalized.location}
 
 {?event.normalized.price}
-    <div class="info-group mb-5 has-border-gray has-border-1 {template_classes.info_group|s}">
+    <div class="info-group column is-8 is-offset-2 has-border-none">
         {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.price_title template_classes=template_classes.info_group_title icon="euro" /}
 
-        <div class="info-group__description has-text-small has-text-small pt-1 pr-8 pb-4 pl-9">
+        <div class="info-group__description has-text-small has-text-small pt-1 pr-4 pb-2 pl-4">
             {#event.normalized.price}
-                <div>
+                <p class="m-0">
                     {price|s}
-                </div>
-                <div>
+                </p>
+                <p class="m-0">
                     {description|s}
-                </div>
-                {>"ui/link" link=info_url /}
+                </p>
+                {>"ui/link" link=info_url classes="is-inline-block mt-2 has-text-weight-bold" /}
             {/event.normalized.price}
         </div>
     </div>
 {/event.normalized.price}
 
 {?event.normalized.link_sign_up}
-    <div class="info-group mb-5 {template_classes.info_group|attr}">
+    <div class="info-group column is-8 is-offset-2">
         {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.sign_up_title template_classes=template_classes.info_group_title icon="link" /}
 
-        <div class="info-group__description pt-3 pr-8 pb-3 pl-8">
+        <div class="info-group__description pt-3 pr-4 pb-2 pl-4">
             <a href="{event.normalized.link_sign_up.url|url}" target="_blank" class="is-block">{event.normalized.link_sign_up.name|html}</a>
-            {>"ui/link" link=event.normalized.link_sign_up.url /}
+            {>"ui/link" link=event.normalized.link_sign_up.url classes="is-inline-block mt-2 has-text-weight-bold" /}
         </div>
     </div>
 {/event.normalized.link_sign_up}
 
 {?event.normalized.provider}
-    <div class="info-group mb-5 has-border-gray has-border-1 {template_classes.info_group|s}">
+    <div class="info-group column is-8 is-offset-2 has-border-none">
         {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.provider_title template_classes=template_classes.info_group_title icon="bullhorn" /}
 
-        <div class="info-group__description has-text-small has-text-small pt-1 pr-8 pb-4 pl-9">
-            <div>{event.normalized.provider.name|s}</div>
+        <div class="info-group__description pt-1 pr-4 pb-2 pl-4">
+            <p class="m-0">{event.normalized.provider.name|html}</p>
 
             {?event.normalized.provider.email}
                 <div>
-                    <a href="mailto:{event.normalized.provider.email}"
+                    <a href="mailto:{event.normalized.provider.email|attr}"
                        class="has-text-black">
-                        {event.normalized.provider.email|s}
+                        {event.normalized.provider.email|html}
                     </a>
                 </div>
             {/event.normalized.provider.email}
 
             {?event.normalized.provider.phone}
                 <div>
-                    <a href="tel:{event.normalized.provider.phone}"
+                    <a href="tel:{event.normalized.provider.phone|attr}"
                        class="has-text-black">
-                        {event.normalized.provider.phone|s}
+                        {event.normalized.provider.phone|html}
                     </a>
                 </div>
             {/event.normalized.provider.phone}
         </div>
     </div>
 
-    {>"ui/button-link" link=event.normalized.provider.link classes="is-primary mt-3 {template_classes.info_button|s}" icon="chevron-right" icon_classes="icon--medium" /}
+    <div class="info-group column is-8 is-offset-2 has-border-none">
+        <div class="info-group__description pt-1 pr-4 pb-2 pl-4">
+            {>"ui/button-link" link=event.normalized.provider.link classes="is-primary mt-3" icon="chevron-right" icon_classes="icon--medium" /}
+        </div>
+    </div>
 {/event.normalized.provider}
 
 {?event.normalized.virtual_event_link}
-    {>"ui/button-link" link=event.normalized.virtual_event_link classes="is-primary mt-3 {template_classes.info_button|s}" icon="chevron-right" icon_classes="icon--medium" /}
+    <div class="info-group has-border-none">
+        <div class="info-group__description pt-1 pr-4 pb-2 pl-4">
+            {>"ui/button-link" link=event.normalized.virtual_event_link classes="is-primary mt-3 {template_classes.info_button|s}" icon="chevron-right" icon_classes="icon--medium" /}
+        </div>
+    </div>
 {/event.normalized.virtual_event_link}

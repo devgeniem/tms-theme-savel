@@ -6,23 +6,23 @@
             <article class="entry">
                 <section class="section pb-6">
                     <div class="container">
-                        <h1 class="entry__title mt-0 mb-6 has-text-centered">
+                        <h1 class="entry__title mt-8 mb-8 has-text-centered">
                             {event.normalized.name|html}
                         </h1>
                         <div class="columns m-0">
                             <div class="column m-0 p-0">
-                                    {?hero_image}
-                                        <div class="is-flex is-flex-direction-column is-relative">
-                                            <img class="entry__hero-image has-height-100" src="{hero_image|url}" alt=""
-                                                aria-hidden="true"
-                                                tabindex="-1" />
-                                            {?hero_image_credits}
-                                                <div class="entry__hero-image-credits">
-                                                    {hero_image_credits|kses}
-                                                </div>
-                                            {/hero_image_credits}
-                                        </div>
-                                    {/hero_image}
+                                {?hero_image}
+                                    <div class="is-flex is-flex-direction-column is-relative has-height-100">
+                                        <img class="entry__hero-image has-height-100" src="{hero_image|url}" alt=""
+                                            aria-hidden="true"
+                                            tabindex="-1" />
+                                        {?hero_image_credits}
+                                            <div class="entry__hero-image-credits">
+                                                {hero_image_credits|kses}
+                                            </div>
+                                        {/hero_image_credits}
+                                    </div>
+                                {/hero_image}
                             </div>
                             <div class="column p-0">
                                 <div class="entry__hero-info background-gradient-savel section pt-6 pb-6 has-height-100 {template_classes.hero_info|attr}">
@@ -45,14 +45,12 @@
                                     </div>
                                 {/event.normalized.short_description}
 
-                                <div class="columns is-multiline is-variable is-8 mb-8">
-                                    <div class="entry__description column is-5-desktop is-offset-1-desktop keep-vertical-spacing">
-                                        {event.normalized.description|kses}
-                                    </div>
+                                <div class="entry__info-group pt-5 pb-5">
+                                    {>"views/single-dynamic-event/single-dynamic-event-info" /}
+                                </div>
 
-                                    <div class="column is-5-desktop">
-                                        {>"views/single-dynamic-event/single-dynamic-event-info" /}
-                                    </div>
+                                <div class="entry__description column is-6-desktop is-offset-3-desktop mt-5 mb-5">
+                                    {event.normalized.description|kses}
                                 </div>
 
                                 {?share_links}

@@ -44,6 +44,11 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             [ $this, 'alter_content_columns_data' ],
             30
         );
+        \add_filter( 'tms/acf/layout/textblock/data', function ( $data ) {
+            $data['link_class'] = 'is-primary';
+
+            return $data;
+        } );
     }
 
     /**

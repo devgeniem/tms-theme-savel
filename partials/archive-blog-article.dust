@@ -44,7 +44,7 @@
 
                     {>"views/home/home-filters" /}
 
-                    <div class="columns is-multiline mt-8">
+                    <div class="blog columns is-multiline mt-8">
                         {?articles}
                             {#articles}
                                 {>"views/home/home-{view_type}-item" /}
