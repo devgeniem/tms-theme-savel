@@ -58,28 +58,6 @@ class RolesController implements Controller {
     ];
 
     /**
-     * Exhibition / exhibition-cpt
-     *
-     * @var string[]
-     */
-    private $exhibition_all_capabilities = [
-        'delete_exhibition',
-        'delete_exhibitions',
-        'delete_others_exhibitions',
-        'delete_private_exhibitions',
-        'delete_published_exhibitions',
-        'edit_exhibition',
-        'edit_exhibitions',
-        'edit_others_exhibitions',
-        'edit_private_exhibitions',
-        'edit_published_exhibitions',
-        'publish_exhibitions',
-        'read',
-        'read_exhibition',
-        'read_private_exhibitions',
-    ];
-
-    /**
      * Artist Category taxonomy
      *
      * @var string[]
@@ -122,7 +100,6 @@ class RolesController implements Controller {
     public function modify_super_administrator_caps( Role $role ) {
         $role->add_caps( $this->artists_all_capabilities );
         $role->add_caps( $this->festivals_all_capabilities );
-        $role->add_caps( $this->exhibition_all_capabilities );
         $role->add_caps( $this->taxonomy_artist_category_all_capabilities );
         $role->add_caps( $this->taxonomy_festival_category_all_capabilities );
 
@@ -137,7 +114,6 @@ class RolesController implements Controller {
     public function modify_admin_caps( Role $role ) {
         $role->add_caps( $this->artists_all_capabilities );
         $role->add_caps( $this->festivals_all_capabilities );
-        $role->add_caps( $this->exhibition_all_capabilities );
         $role->add_caps( $this->taxonomy_artist_category_all_capabilities );
         $role->add_caps( $this->taxonomy_festival_category_all_capabilities );
 
@@ -152,7 +128,6 @@ class RolesController implements Controller {
     public function modify_editor_caps( Role $role ) {
         $role->add_caps( $this->artists_all_capabilities );
         $role->add_caps( $this->festivals_all_capabilities );
-        $role->add_caps( $this->exhibition_all_capabilities );
         $role->add_caps( $this->taxonomy_artist_category_all_capabilities );
         $role->add_caps( $this->taxonomy_festival_category_all_capabilities );
 
@@ -167,7 +142,6 @@ class RolesController implements Controller {
     public function modify_author_caps( Role $role ) {
         $role->add_caps( $this->artists_all_capabilities );
         $role->add_caps( $this->festivals_all_capabilities );
-        $role->add_caps( $this->exhibition_all_capabilities );
 
         $role->add_caps( [
             'assign_festival_categories',
@@ -183,7 +157,6 @@ class RolesController implements Controller {
      * @param Role $role Instance of \Geniem\Role.
      */
     public function modify_contributor_caps( Role $role ) {
-        $role->add_caps( $this->exhibition_all_capabilities );
         $role->add_caps( [
             'delete_artist',
             'delete_artists',

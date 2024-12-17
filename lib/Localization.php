@@ -2,7 +2,6 @@
 
 namespace TMS\Theme\Savel;
 
-use TMS\Theme\Savel\PostType\Exhibition;
 use TMS\Theme\Savel\Taxonomy\ArtistCategory;
 use TMS\Theme\Savel\Taxonomy\FestivalCategory;
 
@@ -58,7 +57,6 @@ class Localization extends \TMS\Theme\Base\Localization implements \TMS\Theme\Ba
     protected function add_tax_to_polylang( $tax_types, $is_settings ): array { // phpcs:ignore
         $tax_types[ ArtistCategory::SLUG ]  = ArtistCategory::SLUG;
         $tax_types[ FestivalCategory::SLUG ] = FestivalCategory::SLUG;
-        $tax_types[ Exhibition::SLUG ]      = Exhibition::SLUG;
 
         return $tax_types;
     }
