@@ -1,7 +1,4 @@
 <?php
-/**
- * Template Name: Festivaaliarkisto
- */
 
 use TMS\Theme\Base\Traits\Pagination;
 use TMS\Theme\Savel\PostType\Artist;
