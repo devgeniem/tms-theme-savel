@@ -34,7 +34,7 @@
                             {#phone_repeater}
                                 <div class="is-flex is-align-items-center">
                                     <div class="contacts__icon-container">
-                                        {>"ui/icon" icon="phone" class="icon--large is-accent" /}
+                                        {>"ui/icon" icon="phone" class="icon--large is-primary" /}
                                     </div>
 
                                     <div>
@@ -54,7 +54,7 @@
                     {?email}
                         <div class="is-flex is-align-items-center mb-3">
                             <div class="contacts__icon-container">
-                                {>"ui/icon" icon="email" class="icon--large is-accent" /}
+                                {>"ui/icon" icon="email" class="icon--large is-primary" /}
                             </div>
 
                             <a href="mailto:{email|s}" class="has-text-paragraph">
@@ -66,7 +66,7 @@
                     {?office}
                         <div class="is-flex is-align-items-center mb-3">
                             <div class="contacts__icon-container">
-                                {>"ui/icon" icon="building" class="icon--large is-accent" /}
+                                {>"ui/icon" icon="building" class="icon--large is-primary" /}
                             </div>
 
                             <div>
@@ -78,7 +78,7 @@
                     {?domain}
                         <div class="is-flex is-align-items-center mb-3">
                             <div class="contacts__icon-container">
-                                {>"ui/icon" icon="location" class="icon--large is-accent" /}
+                                {>"ui/icon" icon="location" class="icon--large is-primary" /}
                             </div>
 
                             <div>
@@ -90,7 +90,7 @@
                     {?unit}
                         <div class="is-flex is-align-items-center mb-3">
                             <div class="contacts__icon-container">
-                                {>"ui/icon" icon="location" class="icon--large is-accent" /}
+                                {>"ui/icon" icon="location" class="icon--large is-primary" /}
                             </div>
 
                             <div>
@@ -102,7 +102,7 @@
                     {@isset key1=visiting_address_street key2=visiting_address_zip_code key3=visiting_address_city method="OR" }
                         <div class="is-flex is-align-items-center mb-3">
                             <div class="contacts__icon-container">
-                                {>"ui/icon" icon="location" class="icon--large is-accent" /}
+                                {>"ui/icon" icon="location" class="icon--large is-primary" /}
                             </div>
 
                             {visiting_address_street|s}
@@ -114,7 +114,7 @@
                     {@isset key1=mail_address_street key2=mail_address_zip_code key3=mail_address_city method="OR" }
                         <div class="is-flex is-align-items-center mb-3">
                             <div class="contacts__icon-container">
-                                {>"ui/icon" icon="location" class="icon--large is-accent" /}
+                                {>"ui/icon" icon="location" class="icon--large is-primary" /}
                             </div>
 
                             {mail_address_street|s}

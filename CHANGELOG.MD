@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - Modify theme files
+- Modify hero-component
+- Modify header & navigation
 - Add key-figures as a component
 - Add new timeline-component
 

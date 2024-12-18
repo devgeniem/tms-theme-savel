@@ -55,7 +55,8 @@
     }
 
     .navbar-dropdown {
-        width: 200px !important;
+        width: 220px !important;
+        margin-top: $theme-spacing-half !important;
         min-width: auto !important;
         border-top: none !important;
         background-color: $white !important;
@@ -92,6 +93,7 @@
             background-color: transparent !important;
             font-weight: $weight-medium;
             border-bottom: none !important;
+            padding: $theme-spacing-half !important;
 
             .icon {
                 width: $theme-spacing-half !important;
