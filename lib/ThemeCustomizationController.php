@@ -40,6 +40,11 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
 
             return $data;
         } );
+        \add_filter( 'tms/acf/layout/icon_links/data', function ( $data ) {
+            $data['button_classes'] = 'is-primary';
+
+            return $data;
+        } );
         \add_filter( 'tms/acf/layout/content_columns/data',
             [ $this, 'alter_content_columns_data' ],
             30
