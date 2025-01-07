@@ -22,19 +22,12 @@
             <p class="mt-0 mb-3 has-text-white is-family-secondary">
                 {event.normalized.price_title|html} {price|html}
             </p>
+            {?.info_url.title}
             <a href="{.info_url.url|url}" target="_blank"
                 class="is-inline-block is-align-self-center button is-outlined-invert mt-3">
                 {.info_url.title|html}
             </a>
+            {/.info_url.title}
         {/event.normalized.price}
     {/event.normalized.price}
-
-    {?event.normalized.link_purchase_ticket}
-        <div class="has-width-100 mt-3">
-            <a href="{event.normalized.link_purchase_ticket.url|url}" target="_blank"
-                class="is-inline-block button is-small is-primary">
-                {event.normalized.link_purchase_ticket.name|html}
-            </a>
-        </div>
-    {/event.normalized.link_purchase_ticket}
 </div>

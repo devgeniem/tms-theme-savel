@@ -11,7 +11,6 @@ form {
 }
 
 select {
-    background-color: $primary-invert;
     color: $primary;
 
     @include until($desktop) {
@@ -29,10 +28,12 @@ select {
         padding: 0.8rem !important;
     }
 
-    button[type="submit"],
-    .gform_button_select_files {
+    .button {
         display: inline-flex;
         justify-content: space-between;
+        background-color: $color-savel-button !important;
+        border-color: $color-savel-button !important;
+        color: $white !important;
 
         &:after {
             content: "";
@@ -40,36 +41,21 @@ select {
             height: 1rem;
             display: block;
             margin-left: 1rem;
-            background-color: white;
+            background-color: $white;
         }
 
         &:hover,
-        &:focus {
-            &:after {
-                background-color: black;
-            }
-        }
-
+        &.is-hovered,
+        &:focus,
+        &.is-focused,
         &:active {
-            &:after {
-                background-color: white;
-            }
+            background-color: $color-savel-button-hover !important;
+            border-color: $color-savel-button-hover !important;
+            color: $white !important;
         }
     }
-
-    button[type="submit"] {
-
-        &:after { 
-            mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><path d="M2.13436 0L0.365646 1.76877L6.09688 7.5L0.365646 13.2312L2.13436 15L9.63436 7.5L2.13436 0Z"/></svg>');
-            mask-size: cover;
-            mask-repeat: no-repeat;
-            mask-position: center;
-        }
-    }
-
 
     .gform_button_select_files {
-
         &:after {
             width: 1rem;
             height: 1rem;
@@ -83,10 +69,12 @@ select {
 }
 
 .gfield_checkbox {
-
     label {
         &::before {
-            margin-top: 0.25rem;
+            // margin-top: 0.25rem;
+            // checked bg blue
+            // ^^ sama radioille ja myös pienemmäks valkonen keskipalkki?
+            // dropdown tekstin color väärä
         }
     }
 }
@@ -103,19 +91,6 @@ select {
     justify-content: space-between;
     background: none;
     border: 0.125rem dashed $black;
-}
-
-.gform_button_select_files,
-.gform_delete_file {
-
-    &:hover,
-    &:focus {
-        border-color: $black !important;
-        background-color: $white !important;
-        color: $color-tekstin-vari !important;
-        outline: 0.125rem dotted $black !important;
-        outline-offset: 0.25rem !important;
-    }
 }
 
 .gform_delete_file {

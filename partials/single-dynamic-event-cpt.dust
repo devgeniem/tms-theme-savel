@@ -22,30 +22,25 @@
 
                 <section class="section">
                     <div class="container">
-                        {?event.normalized.short_description}
-                            <div class="columns">
-                                <div
-                                    class="column is-8 is-6-desktop is-offset-2 is-offset-3-desktop mb-6-desktop has-text-centered">
-                                    <p class="has-text-large">
-                                        {event.normalized.short_description|s}
-                                    </p>
-                                </div>
-                            </div>
-                        {/event.normalized.short_description}
-
                         <div class="columns">
                             <div class="column">
-                                <div class="columns is-multiline is-variable is-0 is-8-desktop mb-8">
-                                    <div class="column is-5-desktop is-offset-1-desktop keep-vertical-spacing">
-                                        {event.normalized.description|s}
+                                {?event.normalized.short_description}
+                                    <div class="entry__content is-content-grid mb-8 has-text-centered">
+                                        <p class="mt-6 mb-6 has-text-large">
+                                            {event.normalized.short_description|kses}
+                                        </p>
                                     </div>
+                                {/event.normalized.short_description}
 
-                                    <div class="column is-5-desktop">
-                                        {>"views/single-dynamic-event/single-dynamic-event-info" /}
-                                    </div>
+                                <div class="entry__info-group pt-5 pb-5">
+                                    {>"views/single-dynamic-event/single-dynamic-event-info" /}
                                 </div>
 
-                                <div class="entry__content is-content-grid mb-8 mb-10-desktop keep-vertical-spacing">
+                                <div class="entry__description column is-6-desktop is-offset-3-desktop mt-5 mb-5">
+                                    {event.normalized.description|kses}
+                                </div>
+
+                                <div class="entry__content column is-content-grid mb-8 mb-10-desktop keep-vertical-spacing">
                                     {@content /}
                                 </div>
 

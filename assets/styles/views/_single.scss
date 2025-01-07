@@ -1,4 +1,9 @@
 .single-post {
+
+    .main-content {
+        overflow-x: hidden;
+    }
+
     .entry {
         &__share-links {
             h2 {

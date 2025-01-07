@@ -54,6 +54,10 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
 
             return $data;
         } );
+        \add_filter(
+            'tms/theme/event/hero_info_classes',
+            fn() => 'has-colors-primary'
+        );
     }
 
     /**

@@ -1,12 +1,6 @@
 .single-dynamic-event-cpt,
 .single-manual-event-cpt {
     .entry {
-        &__hero {
-            h1 {
-                color: $primary-invert !important;
-            }
-        }
-
         &__hero-image {
             object-fit: cover;
         }

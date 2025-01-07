@@ -7,6 +7,10 @@
         }
     }
 
+    &__items {
+        margin: 0 2rem;
+    }
+
     &__item {
         .has-shape-round {
             display: inline-block;
@@ -26,12 +30,12 @@
         }
 
         .slick-prev {
-            left: 0.5rem;
+            left: 2.5rem;
             padding: 0 !important;
         }
 
         .slick-next {
-            right: 0.5rem;
+            right: 2.5rem;
             padding: 0 !important;
         }
 
