@@ -75,7 +75,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $colors['lang_nav']['dropdown_toggle'] = 'is-small';
         $colors['fly_out_nav']['inner']        = 'has-text-primary-invert';
         $colors['fly_out_nav']['search_title'] = 'has-text-white';
-        $colors['search_button']               = '';
+        $colors['search_button']               = 'is-primary-invert is-outlined';
 
         return $colors;
     }

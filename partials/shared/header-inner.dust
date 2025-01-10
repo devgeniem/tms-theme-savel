@@ -1,4 +1,4 @@
-<div class="site-header__wrapper pb-1 pt-1">
+<div class="site-header__wrapper">
     <div class="site-header__branding">
         {>"shared/header-logo" /}
     </div>
@@ -63,13 +63,13 @@
 
     {^Header.hide_search}
         <div id="js-search-toggle-target"
-             class="site-header__popup is-hidden is-absolute has-right-0 has-bottom-0 has-left-0 has-transform-y-100 {Header.colors.search_popup_container|attr}"
+             class="site-header__popup is-hidden is-absolute has-right-0 has-left-0 has-transform-y-100 {Header.colors.search_popup_container|attr}"
              role="search">
             <div class="container">
                 <div class="columns">
                     <div class="column is-8 is-offset-2-tablet is-6-desktop is-offset-3-desktop">
                         <div class="pt-6 pb-6 pt-8-desktop pb-8-desktop">
-                            <div id="header-search-title" class="popup__label h4 mb-6">
+                            <div id="header-search-title" class="popup__label h5 mb-4">
                                 {Strings.s.header.search_title|html}
                             </div>
 

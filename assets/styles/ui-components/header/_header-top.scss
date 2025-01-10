@@ -6,11 +6,11 @@
     position: sticky;
     top: $theme-spacing-half;
     z-index: 6;
-    background: linear-gradient( $color-savel-darkgreen, $color-savel-green );
+    background: linear-gradient( 178deg, $color-savel-green 25%, $color-savel-darkgreen 100% );
     color: $navbar-item-navbar-link-color;
     margin: 0 $theme-spacing-half;
-    border-radius: .75rem;
-    padding: 1rem;
+    border-radius: $theme-spacing-three-quarters;
+    padding: $theme-spacing;
 
     @include from($tablet) {
         margin: 0 $theme-spacing-oneandhalf;
@@ -32,10 +32,14 @@
         gap: $theme-spacing;
         max-width: $container-max-width;
         margin: 0 auto;
-        padding: 0;
+        padding: $theme-spacing-half;
 
         @include from($tablet) {
-            padding: 0 $theme-spacing;
+            padding: $theme-spacing-half $theme-spacing;
+        }
+
+        @include from($widescreen) {
+            padding: $theme-spacing $theme-spacing-oneandhalf;
         }
     }
 
@@ -67,7 +71,10 @@
     }
 
     &__popup {
+        bottom: -$theme-spacing-quarter !important;
+        border-radius: $theme-spacing-three-quarters;
         box-shadow: 0 .0588rem .5rem rgba($black, .1);
+        background: linear-gradient( 178deg, $color-savel-green 25%, $color-savel-darkgreen 100% );
     }
 
     .search-form {
@@ -75,6 +82,10 @@
 
         &__input {
             height: 100%;
+            background-color: transparent !important;
+            border-color: $white !important;
+            color: $white !important;
+            font-size: $body-font-size;
         }
     }
 
