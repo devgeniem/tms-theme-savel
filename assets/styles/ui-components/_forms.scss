@@ -35,15 +35,6 @@ select {
         border-color: $color-savel-button !important;
         color: $white !important;
 
-        &:after {
-            content: "";
-            width: 0.7rem;
-            height: 1rem;
-            display: block;
-            margin-left: 1rem;
-            background-color: $white;
-        }
-
         &:hover,
         &.is-hovered,
         &:focus,
@@ -66,17 +57,6 @@ select {
         }
     }
 
-}
-
-.gfield_checkbox {
-    label {
-        &::before {
-            // margin-top: 0.25rem;
-            // checked bg blue
-            // ^^ sama radioille ja myös pienemmäks valkonen keskipalkki?
-            // dropdown tekstin color väärä
-        }
-    }
 }
 
 .gfield_label {

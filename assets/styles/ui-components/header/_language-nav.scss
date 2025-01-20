@@ -72,18 +72,12 @@
         a {
             border-color: $white !important;
 
-            &.has-text-primary {
-                color: $color-savel-darkgreen !important;
-            }
-
-            &.has-text-primary-invert {
-                &:hover {
-                    color: $primary-invert !important;
+            &.has-background-primary {
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: $primary !important;
                 }
-            }
-
-            &:hover {
-                background-color: $primary-invert !important;
             }
 
             &:focus {

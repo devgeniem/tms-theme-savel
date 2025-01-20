@@ -51,6 +51,10 @@
         }
 
         > a {
+            img {
+                min-width: 180px;
+            }
+
             &:focus {
                 outline-offset: .2rem;
                 outline: .125rem dotted $white !important;
