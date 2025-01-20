@@ -76,11 +76,19 @@ $button-secondary-border-color: $button-primary-border-color;
             border-color: $color-savel-button !important;
             background-color: $primary-invert !important;
             color: $color-savel-button !important;
+
+            .icon {
+                fill: $color-savel-button !important;
+            }
         }
 
         &:active {
             background-color: $white !important;
             color: $color-savel-button !important;
+        }
+
+        .icon {
+            fill: $color-savel-button !important;
         }
     }
 
