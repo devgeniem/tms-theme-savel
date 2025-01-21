@@ -17,7 +17,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      *
      * @return void
      */
-    public function hooks() : void {
+    public function hooks(): void {
         \add_filter( 'tms/theme/search/search_item', [ $this, 'event_search_classes' ] );
         \add_filter( 'tms/theme/nav_parent_link_is_trigger_only', '__return_true' );
 
@@ -67,7 +67,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      *
      * @return array Array of customized colors.
      */
-    public function header( $colors ) : array {
+    public function header( $colors ): array {
         $colors['nav']['container']            = '';
         $colors['search_popup_container']      = 'has-text-primary-invert';
         $colors['lang_nav']['link__default']   = 'has-text-primary-invert';
@@ -87,7 +87,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      *
      * @return array
      */
-    public function footer( array $classes ) : array {
+    public function footer( array $classes ): array {
         $classes['container']   = '';
         $classes['back_to_top'] = 'is-outlined';
         $classes['link']        = 'has-text-paragraph';
@@ -103,7 +103,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      *
      * @return array
      */
-    public function search_classes( $classes ) : array {
+    public function search_classes( $classes ): array {
         $classes['event_search_section'] = '';
 
         return $classes;
@@ -116,7 +116,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      *
      * @return array
      */
-    public function single_blog_classes( $classes ) : array {
+    public function single_blog_classes( $classes ): array {
         $classes['info_section']         = '';
         $classes['info_section_authors'] = '';
         $classes['info_section_button']  = 'is-primary';
@@ -129,7 +129,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      *
      * @return string
      */
-    public function comments_submit() : string {
+    public function comments_submit(): string {
         return sprintf(
             '<button name="submit" type="submit" id="submit" class="button button--icon is-primary" >%s %s</button>', // phpcs:ignore
             __( 'Send Comment', 'tms-theme-base' ),
@@ -146,7 +146,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      *
      * @return string
      */
-    public function reply_link_classes( string $link ) : string {
+    public function reply_link_classes( string $link ): string {
         return str_replace( 'comment-reply-link', 'comment-reply-link is-small', $link );
     }
 
@@ -211,7 +211,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      *
      * @return array
      */
-    public function event_search_classes( $classes ) : array {
+    public function event_search_classes( $classes ): array {
         $classes['search_form'] = 'events__search-form';
 
         return $classes;
@@ -224,7 +224,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      *
      * @return array
      */
-    public function error404_search_link( $link ) : array {
+    public function error404_search_link( $link ): array {
         $link['classes'] = '';
 
         return $link;

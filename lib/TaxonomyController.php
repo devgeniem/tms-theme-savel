@@ -14,7 +14,7 @@ class TaxonomyController extends \TMS\Theme\Base\TaxonomyController implements \
      *
      * @return string
      */
-    protected function get_namespace() : string {
+    protected function get_namespace(): string {
         return __NAMESPACE__;
     }
 
@@ -23,7 +23,7 @@ class TaxonomyController extends \TMS\Theme\Base\TaxonomyController implements \
      *
      * @return array
      */
-    protected function get_files() : array {
+    protected function get_files(): array {
         return array_diff( scandir( __DIR__ . '/Taxonomy' ), [ '.', '..' ] );
     }
 }

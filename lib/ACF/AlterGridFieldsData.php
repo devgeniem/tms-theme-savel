@@ -45,7 +45,7 @@ class AlterGridFields {
      *
      * @return array
      */
-    public function alter_fields( array $fields ) : array {
+    public function alter_fields( array $fields ): array {
         try {
             $fields['repeater']->sub_fields['grid_item_custom']->sub_fields['description']->set_maxlength( 300 );
             $fields['repeater']->sub_fields['grid_item_custom']->sub_fields['description']->set_new_lines( 'br' );
@@ -64,7 +64,7 @@ class AlterGridFields {
      *
      * @return array
      */
-    public function alter_format( array $layout ) : array {
+    public function alter_format( array $layout ): array {
         foreach ( $layout['repeater'] as $key => $item ) {
             $layout['repeater'][ $key ]['classes'] = str_replace( [ 'has-colors-primary'], [ 'has-colors-secondary' ], $layout['repeater'][ $key ]['classes'] ); // phpcs:ignore
             $layout['repeater'][ $key ]['button']  = 'is-primary has-text-weight-semibold';

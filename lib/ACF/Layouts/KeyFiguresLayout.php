@@ -41,7 +41,7 @@ class KeyFiguresLayout extends Layout {
      * @return array
      * @throws Exception In case of invalid option.
      */
-    public function add_layout_fields() : void {
+    public function add_layout_fields(): void {
         $strings = [
             'background_image'      => [
                 'label'        => 'Taustakuva',

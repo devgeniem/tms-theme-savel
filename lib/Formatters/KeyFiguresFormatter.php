@@ -17,7 +17,7 @@ class KeyFiguresFormatter implements \TMS\Theme\Base\Interfaces\Formatter {
     /**
      * Hooks
      */
-    public function hooks() : void {
+    public function hooks(): void {
         \add_filter(
             'tms/acf/layout/key_figures/data',
             [ $this, 'format' ],
@@ -32,7 +32,7 @@ class KeyFiguresFormatter implements \TMS\Theme\Base\Interfaces\Formatter {
      *
      * @return array
      */
-    public function format( array $layout ) : array {
+    public function format( array $layout ): array {
         $layouts = [
             '50-50' => [
                 'is-6-desktop',
@@ -60,10 +60,6 @@ class KeyFiguresFormatter implements \TMS\Theme\Base\Interfaces\Formatter {
 
             foreach ( $row_data['numbers'] as $number => $numbers_data ) {
                 $altered['rows'][ $row ]['numbers'][ $number ]['column_class'] = $layouts[ $row_layout ][ $number ];
-
-                $background_image = $altered['rows'][ $row ]['numbers'][ $number ]['background_image'];
-                // var_dump($background_image);
-                // $altered['rows'][ $row ]['numbers'][ $number ]['background_image'] = $background_image;
 
                 // Count the chars in the number field to determine the longest number in the component
                 $num_len = strlen( $numbers_data['number'] );

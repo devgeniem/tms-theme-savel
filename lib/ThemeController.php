@@ -13,7 +13,7 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
     /**
      * Init classes
      */
-    protected function init_classes() : void {
+    protected function init_classes(): void {
         $classes = [
             IndexController::class,
             Assets::class,

@@ -67,7 +67,7 @@ class SingleFestival extends SingleArtist {
      *
      * @return array|null
      */
-    public function festival() : ?array {
+    public function festival(): ?array {
         $festival    = parent::festivals();
         $current_id = \get_the_ID();
 
@@ -85,7 +85,7 @@ class SingleFestival extends SingleArtist {
      *
      * @return array[]|null
      */
-    protected function get_info_group_artist_name() : ?array {
+    protected function get_info_group_artist_name(): ?array {
         $group      = null;
         $artist_ids = array_keys( $this->get_artist_map() );
 
@@ -138,7 +138,7 @@ class SingleFestival extends SingleArtist {
      *
      * @return array[]
      */
-    protected function format_info_group( string $row_title, string $row_text ) : array {
+    protected function format_info_group( string $row_title, string $row_text ): array {
         return [
             'additional_information_title' => $row_title,
             'additional_information_text'  => $row_text,
@@ -150,7 +150,7 @@ class SingleFestival extends SingleArtist {
      *
      * @return array
      */
-    public function image_gallery() : array {
+    public function image_gallery(): array {
         $gallery_field = ! empty( \get_field( 'images' ) ) ? \get_field( 'images' ) : [];
 
         if ( \has_post_thumbnail() ) {
@@ -229,7 +229,7 @@ class SingleFestival extends SingleArtist {
      *
      * @return array
      */
-    protected function get_festival() : array {
+    protected function get_festival(): array {
         $map     = $this->get_artist_map();
         $festival = [];
 
@@ -249,7 +249,7 @@ class SingleFestival extends SingleArtist {
      *
      * @return array
      */
-    protected function get_artist_map() : array {
+    protected function get_artist_map(): array {
         $artists = Artist::get_all();
 
         if ( empty( $artists ) ) {

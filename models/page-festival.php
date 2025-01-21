@@ -54,7 +54,7 @@ class PageFestival extends PageArtist {
      *
      * @return array[]
      */
-    public function strings() : array {
+    public function strings(): array {
         return [
             'search'         => [
                 'label'             => __( 'Search for festival', 'tms-theme-savel' ),
@@ -76,7 +76,7 @@ class PageFestival extends PageArtist {
      *
      * @return string
      */
-    public function page_title() : string {
+    public function page_title(): string {
         return \get_the_title();
     }
 
@@ -85,7 +85,7 @@ class PageFestival extends PageArtist {
      *
      * @return string
      */
-    public function page_description() : string {
+    public function page_description(): string {
         return \get_field( 'description' ) ?? '';
     }
 
@@ -94,7 +94,7 @@ class PageFestival extends PageArtist {
      *
      * @return string[]
      */
-    public function search() : array {
+    public function search(): array {
         $this->search_data        = new stdClass();
         $this->search_data->query = \get_query_var( self::SEARCH_QUERY_VAR );
 
@@ -179,7 +179,7 @@ class PageFestival extends PageArtist {
      *
      * @return string[]
      */
-    public function active_filter_data() : ?array {
+    public function active_filter_data(): ?array {
         $active_filter = self::get_filter_query_var();
 
         return $active_filter ? [
@@ -204,7 +204,7 @@ class PageFestival extends PageArtist {
      *
      * @return array
      */
-    protected function format_posts( array $posts ) : array {
+    protected function format_posts( array $posts ): array {
         $artist_map = $this->get_artist_map();
 
         return array_map( function ( $item ) use ( $artist_map ) {
@@ -229,7 +229,7 @@ class PageFestival extends PageArtist {
      *
      * @return array
      */
-    protected function get_artist_map() : array {
+    protected function get_artist_map(): array {
         $artists = Artist::get_all();
 
         if ( empty( $artists ) ) {

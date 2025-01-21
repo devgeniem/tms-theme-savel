@@ -24,8 +24,8 @@ class AccordionImageFormatter implements \TMS\Theme\Base\Interfaces\Formatter {
     /**
      * Hooks
      */
-    public function hooks() : void {
-        add_filter(
+    public function hooks(): void {
+        \add_filter(
             'tms/acf/layout/accordion_image/data',
             [ $this, 'format' ]
         );
@@ -38,7 +38,7 @@ class AccordionImageFormatter implements \TMS\Theme\Base\Interfaces\Formatter {
      *
      * @return array
      */
-    public function format( array $data ) : array {
+    public function format( array $data ): array {
         if ( empty( $data['image'] ) ) {
             return $data;
         }

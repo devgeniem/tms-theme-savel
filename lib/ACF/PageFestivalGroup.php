@@ -35,7 +35,7 @@ class PageFestivalGroup {
     /**
      * Register fields
      */
-    protected function register_fields() : void {
+    protected function register_fields(): void {
         try {
             $group_title = 'Arkiston asetukset';
 
@@ -106,7 +106,7 @@ class PageFestivalGroup {
      *
      * @return array
      */
-    protected function alter_component_rules( array $rules ) : array {
+    protected function alter_component_rules( array $rules ): array {
         $rules[] = [
             'param'    => 'page_template',
             'operator' => '!=',

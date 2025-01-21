@@ -18,7 +18,7 @@ class IndexController implements Controller {
     /**
      * Hooks
      */
-    public function hooks() : void {
+    public function hooks(): void {
         \add_filter( 'redipress/schema_fields', function ( $fields ) {
             $fields[] = new TextField( [
                 'name'     => 'artists',

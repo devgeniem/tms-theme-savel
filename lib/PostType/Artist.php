@@ -61,7 +61,7 @@ class Artist implements PostType {
      *
      * @return void
      */
-    public function hooks() : void {
+    public function hooks(): void {
         // \add_action( 'init', Closure::fromCallable( [ $this, 'register' ] ), 15 );
         // \add_filter( 'tms/gutenberg/blocks', Closure::fromCallable( [ $this, 'allowed_blocks' ] ), 10, 1 );
         // \add_filter(
@@ -84,7 +84,7 @@ class Artist implements PostType {
      *
      * @return string
      */
-    public function get_post_type() : string {
+    public function get_post_type(): string {
         return static::SLUG;
     }
 
@@ -183,7 +183,7 @@ class Artist implements PostType {
      *
      * @return array[]
      */
-    private function get_breadcrumbs_base( $is_cpt_archive = false ) : array {
+    private function get_breadcrumbs_base( $is_cpt_archive = false ): array {
         $breadcrumbs = [
             'home' => [
                 'title'     => \_x( 'Home', 'Breadcrumbs', 'tms-theme-savel' ),
@@ -309,7 +309,7 @@ class Artist implements PostType {
      *
      * @return \WP_Post[]
      */
-    public static function get_all() : array {
+    public static function get_all(): array {
         $the_query = new WP_Query( [
             'post_type'              => self::SLUG,
             'posts_per_page'         => 200, // phpcs:ignore

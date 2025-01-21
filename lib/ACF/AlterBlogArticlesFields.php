@@ -26,7 +26,7 @@ class AlterBlogArticlesFields {
      *
      * @return array
      */
-    public function alter_fields( array $fields ) : array {
+    public function alter_fields( array $fields ): array {
 
         $strings = [
             'limit' => [

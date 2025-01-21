@@ -56,7 +56,7 @@ class SingleArtist extends BaseModel {
      *
      * @return array|null
      */
-    public function festivals() : ?array {
+    public function festivals(): ?array {
         $festival_items = $this->get_festivals();
 
         if ( empty( $festival_items ) ) {
@@ -91,7 +91,7 @@ class SingleArtist extends BaseModel {
      * @param WP_Post $item           Related post item.
      * @param int     $excerpt_length Target excerpt length.
      */
-    protected function get_festival_excerpt( WP_Post $item, int $excerpt_length = 25 ) : string {
+    protected function get_festival_excerpt( WP_Post $item, int $excerpt_length = 25 ): string {
         $item_excerpt = \get_the_excerpt( $item->ID );
 
         return strlen( $item_excerpt ) > $excerpt_length

@@ -21,12 +21,12 @@ class ArtistGroup {
      * ArtistGroup constructor.
      */
     public function __construct() {
-        add_action(
+        \add_action(
             'init',
             \Closure::fromCallable( [ $this, 'register_fields' ] )
         );
 
-        add_filter(
+        \add_filter(
             'acf/load_value/name=additional_information',
             [ $this, 'prefill_additional_info' ],
             10,
@@ -37,7 +37,7 @@ class ArtistGroup {
     /**
      * Register fields
      */
-    protected function register_fields() : void {
+    protected function register_fields(): void {
         try {
             $field_group = ( new Group( 'Artistin lisätiedot' ) )
                 ->set_key( 'fg_artist_fields' );
@@ -79,7 +79,7 @@ class ArtistGroup {
      * @return Field\Tab
      * @throws Exception In case of invalid option.
      */
-    protected function get_details_tab( string $key ) : Field\Tab {
+    protected function get_details_tab( string $key ): Field\Tab {
         $strings = [
             'tab'                    => 'Lisätiedot',
             'short_description'      => [
@@ -154,7 +154,7 @@ class ArtistGroup {
      * @return Field\Tab
      * @throws Exception In case of invalid option.
      */
-    protected function get_festival_tab( string $key ) : Field\Tab {
+    protected function get_festival_tab( string $key ): Field\Tab {
         $strings = [
             'tab'     => 'Festivaalit',
             'festival' => [

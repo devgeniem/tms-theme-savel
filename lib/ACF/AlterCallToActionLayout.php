@@ -38,7 +38,7 @@ class AlterCallToActionLayout {
      *
      * @return array
      */
-    public function alter_fields( array $fields, string $key ) : array {
+    public function alter_fields( array $fields, string $key ): array {
         $strings = [
             'round_image' => [
                 'label'        => 'Pyöreä kuva',
@@ -86,7 +86,7 @@ class AlterCallToActionLayout {
      *
      * @return array
      */
-    public function alter_format( array $layout ) : array {
+    public function alter_format( array $layout ): array {
 
         if ( empty( $layout['rows'] ) ) {
             return $layout;

@@ -26,7 +26,7 @@ class AlterImageCarousel {
      *
      * @param array $fields ImageCarouselBlock Fields.
      */
-    public function alter_fields( array $fields = [] ) : array {
+    public function alter_fields( array $fields = [] ): array {
         /**
          * Repeater.
          *
@@ -73,7 +73,7 @@ class AlterImageCarousel {
      *
      * @return array
      */
-    public function alter_data( array $data = [] ) : array {
+    public function alter_data( array $data = [] ): array {
         if ( empty( $data['rows'] ?? [] ) ) {
             return $data;
         }

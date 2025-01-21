@@ -55,7 +55,7 @@ class AlterSettingsGroup {
      *
      * @return array
      */
-    protected function register_theme_tabs( array $fields, string $key ) : array {
+    protected function register_theme_tabs( array $fields, string $key ): array {
         try {
             // $fields[] = new Fields\Settings\FestivalSettingsTab( '', $key );
             // $fields[] = new Fields\Settings\ArtistSettingsTab( '', $key );

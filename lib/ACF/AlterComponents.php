@@ -32,7 +32,7 @@ class AlterComponents {
      *
      * @return array
      */
-    public function add_html_layout( array $layouts, string $key ) : array {
+    public function add_html_layout( array $layouts, string $key ): array {
         $layouts[] = new TimelineLayout( $key );
 
         return $layouts;

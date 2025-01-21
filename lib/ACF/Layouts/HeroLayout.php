@@ -40,7 +40,7 @@ class HeroLayout extends Layout {
      * @return array
      * @throws Exception In case of invalid option.
      */
-    public function add_layout_fields() : array {
+    public function add_layout_fields(): array {
         $key = $this->get_key();
 
         $strings = [
@@ -192,7 +192,7 @@ class HeroLayout extends Layout {
      * @return array
      * @throws Exception In case of invalid ACF option.
      */
-    public function get_hero_group_fields( string $key, string $group, array $strings ) : array {
+    public function get_hero_group_fields( string $key, string $group, array $strings ): array {
         $title_field = ( new Field\Text( $strings['title']['label'] ) )
             ->set_key( "{$key}_{$group}_title" )
             ->set_name( "{$group}_title" )

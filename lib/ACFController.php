@@ -15,7 +15,7 @@ class ACFController extends Base\ACFController implements Base\Interfaces\Contro
      *
      * @return string
      */
-    protected function get_base_dir() : string {
+    protected function get_base_dir(): string {
         return __DIR__ . '/ACF';
     }
 

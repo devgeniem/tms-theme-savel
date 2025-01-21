@@ -40,7 +40,7 @@ class TimelineLayout extends Layout {
      * @return void
      * @throws Exception In case of invalid option.
      */
-    public function add_layout_fields() : void {
+    public function add_layout_fields(): void {
         $key = $this->get_key();
 
         $strings = [

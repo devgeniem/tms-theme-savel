@@ -84,7 +84,7 @@ class PageArtist extends BaseModel {
      *
      * @return string
      */
-    public function page_title() : string {
+    public function page_title(): string {
         return \get_the_title();
     }
 
@@ -93,7 +93,7 @@ class PageArtist extends BaseModel {
      *
      * @return string
      */
-    public function page_description() : string {
+    public function page_description(): string {
         return \get_field( 'description' ) ?? '';
     }
 
@@ -102,7 +102,7 @@ class PageArtist extends BaseModel {
      *
      * @return array[]
      */
-    public function strings() : array {
+    public function strings(): array {
         return [
             'search'         => [
                 'label'             => __( 'Search for artist', 'tms-theme-savel' ),
@@ -125,7 +125,7 @@ class PageArtist extends BaseModel {
      *
      * @return string[]
      */
-    public function search() : array {
+    public function search(): array {
         $this->search_data        = new stdClass();
         $this->search_data->query = get_query_var( self::SEARCH_QUERY_VAR );
 
@@ -141,7 +141,7 @@ class PageArtist extends BaseModel {
      *
      * @return string[]
      */
-    public function active_filter_data() : ?array {
+    public function active_filter_data(): ?array {
         $active_filter = self::get_filter_query_var();
 
         return $active_filter ? [
@@ -251,7 +251,7 @@ class PageArtist extends BaseModel {
      *
      * @return array
      */
-    protected function format_posts( array $posts ) : array {
+    protected function format_posts( array $posts ): array {
         return array_map( function ( $item ) {
             $item->permalink   = \get_the_permalink( $item->ID );
             $additional_fields = \get_fields( $item->ID );
@@ -276,7 +276,7 @@ class PageArtist extends BaseModel {
      *
      * @return void
      */
-    protected function set_pagination_data( $wp_query ) : void {
+    protected function set_pagination_data( $wp_query ): void {
         $per_page = \get_option( 'posts_per_page' );
         $paged    = ( \get_query_var( 'paged' ) ) ? \get_query_var( 'paged' ) : 1;
 

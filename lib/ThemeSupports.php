@@ -21,7 +21,7 @@ class ThemeSupports implements Controller {
      *
      * @return void
      */
-    public function hooks() : void {
+    public function hooks(): void {
         \add_filter(
             'query_vars',
             Closure::fromCallable( [ $this, 'query_vars' ] )

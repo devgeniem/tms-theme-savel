@@ -26,7 +26,7 @@ class FestivalCategory implements Taxonomy {
      *
      * @return void
      */
-    public function hooks() : void {
+    public function hooks(): void {
         \add_action( 'init', Closure::fromCallable( [ $this, 'register' ] ), 15 );
     }
 

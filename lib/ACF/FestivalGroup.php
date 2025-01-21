@@ -38,7 +38,7 @@ class FestivalGroup {
     /**
      * Register fields
      */
-    protected function register_fields() : void {
+    protected function register_fields(): void {
         try {
             $field_group = ( new Group( 'Festivaalin lisätiedot' ) )
                 ->set_key( 'fg_festival_fields' );
@@ -79,7 +79,7 @@ class FestivalGroup {
      * @return Field\Tab
      * @throws Exception In case of invalid option.
      */
-    protected function get_details_tab( string $key ) : Field\Tab {
+    protected function get_details_tab( string $key ): Field\Tab {
         $strings = [
             'tab'                    => 'Lisätiedot',
             'images'                 => [

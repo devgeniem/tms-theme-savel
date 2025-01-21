@@ -84,7 +84,7 @@ class RolesController implements Controller {
     /**
      * Hooks
      */
-    public function hooks() : void {
+    public function hooks(): void {
         \add_filter( 'tms/roles/super_administrator', [ $this, 'modify_super_administrator_caps' ] );
         \add_filter( 'tms/roles/admin', [ $this, 'modify_admin_caps' ] );
         \add_filter( 'tms/roles/editor', [ $this, 'modify_editor_caps' ] );

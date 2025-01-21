@@ -17,7 +17,7 @@ class HeroFormatter implements \TMS\Theme\Base\Interfaces\Formatter {
     /**
      * Hooks
      */
-    public function hooks() : void {
+    public function hooks(): void {
         \add_filter(
             'tms/acf/layout/hero/data',
             [ $this, 'format' ],
@@ -32,7 +32,7 @@ class HeroFormatter implements \TMS\Theme\Base\Interfaces\Formatter {
      *
      * @return array
      */
-    public function format( array $layout ) : array {
+    public function format( array $layout ): array {
         $info_one = [
             'title' => $layout['info_one']['info_one_title'] ?? false,
             'text'  => $layout['info_one']['info_one_text'] ?? false,

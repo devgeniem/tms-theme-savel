@@ -61,7 +61,7 @@ class Festival implements PostType {
      *
      * @return void
      */
-    public function hooks() : void {
+    public function hooks(): void {
         // \add_action( 'init', Closure::fromCallable( [ $this, 'register' ] ), 15 );
         // \add_filter( 'tms/gutenberg/blocks', Closure::fromCallable( [ $this, 'allowed_blocks' ] ), 10, 1 );
 
@@ -101,7 +101,7 @@ class Festival implements PostType {
      *
      * @return string
      */
-    public function get_post_type() : string {
+    public function get_post_type(): string {
         return static::SLUG;
     }
 
@@ -203,7 +203,7 @@ class Festival implements PostType {
      *
      * @return array[]
      */
-    private function get_breadcrumbs_base( $is_cpt_archive = false ) : array {
+    private function get_breadcrumbs_base( $is_cpt_archive = false ): array {
         $breadcrumbs = [
             'home' => [
                 'title'     => \_x( 'Home', 'Breadcrumbs', 'tms-theme-savel' ),

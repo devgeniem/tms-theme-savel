@@ -29,7 +29,7 @@ class AlterImageFields {
      *
      * @return array
      */
-    public function alter_fields( array $fields ) : array {
+    public function alter_fields( array $fields ): array {
         $s = [
             'image_shape' => [
                 'title'        => 'Kuvan muoto',

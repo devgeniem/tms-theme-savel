@@ -26,13 +26,13 @@ class AlterKeyFiguresFields {
      *
      * @return array
      */
-    public function alter_fields( array $fields ) : array {
+    public function alter_fields( array $fields ): array {
         $strings = [
             'background_image'      => [
-                'label'        => 'Taustakuva',
+                'label' => 'Taustakuva',
             ],
             'text_background_image' => [
-                'label'        => 'Numerotekstin taustakuva',
+                'label' => 'Numerotekstin taustakuva',
             ],
         ];
 

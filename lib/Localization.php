@@ -40,7 +40,7 @@ class Localization extends \TMS\Theme\Base\Localization implements \TMS\Theme\Ba
             return $post_types;
         }
 
-        $post_types[ PostType\Artist::SLUG ] = PostType\Artist::SLUG;
+        $post_types[ PostType\Artist::SLUG ]   = PostType\Artist::SLUG;
         $post_types[ PostType\Festival::SLUG ] = PostType\Festival::SLUG;
 
         return $post_types;
@@ -55,7 +55,7 @@ class Localization extends \TMS\Theme\Base\Localization implements \TMS\Theme\Ba
      * @return array The modified tax_types -array.
      */
     protected function add_tax_to_polylang( $tax_types, $is_settings ): array { // phpcs:ignore
-        $tax_types[ ArtistCategory::SLUG ]  = ArtistCategory::SLUG;
+        $tax_types[ ArtistCategory::SLUG ]   = ArtistCategory::SLUG;
         $tax_types[ FestivalCategory::SLUG ] = FestivalCategory::SLUG;
 
         return $tax_types;
