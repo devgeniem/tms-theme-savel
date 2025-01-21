@@ -2,7 +2,6 @@
 
 namespace TMS\Theme\Savel;
 
-// use ArchiveFestival;
 use TMS\Theme\Base\Interfaces;
 
 /**
@@ -24,7 +23,6 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
             FormatterController::class,
             ThemeCustomizationController::class,
             ThemeSupports::class,
-            RolesController::class,
         ];
 
         array_walk( $classes, function ( $class ) {
@@ -33,10 +31,6 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
             if ( $instance instanceof Interfaces\Controller ) {
                 $instance->hooks();
             }
-        } );
-
-        \add_action( 'init', function () {
-            // ArchiveFestival::hooks();
         } );
     }
 }
