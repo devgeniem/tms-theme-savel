@@ -1,22 +1,14 @@
 <div class="site-header__wrapper">
     <div class="site-header__branding">
         {>"shared/header-logo" /}
-    </div>
 
-    <div class="is-flex">
-        {^Header.hide_main_nav}
-            <div class="site-header__nav is-relative is-hidden-touch is-hidden-desktop-only {Header.colors.nav|attr}">
-                <nav class="pt-0 pb-0" aria-label="{Strings.s.header.main_navigation|attr}">
-                    {?Header.limit_nav_depth}
-                        {@menu menu_name="primary" depth="1" ul_classes="bulmally-navbar primary-nav primary-nav--simple" menuitem_partial="ui/menu/menu-item-single" /}
-                    {:else}
-                        {@menu menu_name="primary" depth="2" ul_id="js-primary-menu" ul_classes="bulmally-navbar primary-nav primary-nav--dropdown" menuitem_partial="ui/menu/menu-item-dropdown" data=Header.strings /}
-                    {/Header.limit_nav_depth}
+        <div class="site-header__end ml-auto">
+            {^Header.hide_secondary_nav}
+                <nav class="is-hidden-touch is-hidden-desktop-only"  aria-label="{Strings.s.header.frequently_searched_pages|attr}">
+                    {@menu menu_name="secondary" ul_classes="secondary-menu is-flex is-unstyled" menuitem_partial="ui/menu/menuitem-secondary" /}
                 </nav>
-            </div>
-        {/Header.hide_main_nav}
+            {/Header.hide_secondary_nav}
 
-        <div class="site-header__end">
             {?Header.lang_nav_horizontal}
                 <div class="is-hidden-touch">
                     {>"ui/menu/language-nav" links=Header.language_nav.links id="lang-menu" /}
@@ -49,27 +41,19 @@
                 </button>
             {/Header.has_nav_menu}
 
-            {^Header.hide_secondary_nav}
-                <nav class="pr-4 is-hidden-touch is-hidden-desktop-only">
-                    {@menu menu_name="secondary" ul_classes="secondary-menu is-flex is-unstyled" menuitem_partial="ui/menu/menuitem-secondary" /}
-                </nav>
-            {/Header.hide_secondary_nav}
+            {>"shared/header-brand" /}
         </div>
-    </div>
-
-    <div class="site-header__brand-logo is-hidden-touch is-hidden-desktop-only">
-        {>"shared/header-brand" /}
     </div>
 
     {^Header.hide_search}
         <div id="js-search-toggle-target"
-             class="site-header__popup is-hidden is-absolute has-right-0 has-left-0 has-transform-y-100 {Header.colors.search_popup_container|attr}"
+             class="site-header__popup is-hidden is-absolute has-right-0 has-bottom-0 has-left-0 has-transform-y-100 {Header.colors.search_popup_container|attr}"
              role="search">
             <div class="container">
                 <div class="columns">
                     <div class="column is-8 is-offset-2-tablet is-6-desktop is-offset-3-desktop">
                         <div class="pt-6 pb-6 pt-8-desktop pb-8-desktop">
-                            <div id="header-search-title" class="popup__label h5 mb-4">
+                            <div id="header-search-title" class="popup__label h4 mb-6">
                                 {Strings.s.header.search_title|html}
                             </div>
 
@@ -81,3 +65,19 @@
         </div>
     {/Header.hide_search}
 </div>
+
+{^Header.hide_main_nav}
+    <div class="site-header__nav is-relative is-hidden-touch is-hidden-desktop-only {Header.colors.nav|attr}">
+        <div class="container">
+            <div class="columns mt-0 mb-0">
+                <nav class="column pt-0 pb-0" aria-label="{Strings.s.header.main_navigation|attr}">
+                    {?Header.limit_nav_depth}
+                        {@menu menu_name="primary" depth="1" ul_classes="bulmally-navbar primary-nav primary-nav--simple" menuitem_partial="ui/menu/menu-item-single" /}
+                    {:else}
+                        {@menu menu_name="primary" depth="2" ul_id="js-primary-menu" ul_classes="bulmally-navbar primary-nav primary-nav--dropdown" menuitem_partial="ui/menu/menu-item-dropdown" data=Header.strings /}
+                    {/Header.limit_nav_depth}
+                </nav>
+            </div>
+        </div>
+    </div>
+{/Header.hide_main_nav}
