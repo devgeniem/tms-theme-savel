@@ -10,10 +10,11 @@
     color: $navbar-item-navbar-link-color;
     margin: 0 $theme-spacing-half;
     border-radius: $theme-spacing-three-quarters;
-    padding: $theme-spacing;
+    padding: $theme-spacing 0;
 
     @include from($tablet) {
         margin: 0 $theme-spacing-oneandhalf;
+        padding: $theme-spacing;
     }
 
     @include from($widescreen) {
@@ -25,22 +26,8 @@
     }
 
     &__wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        gap: $theme-spacing;
         max-width: $container-max-width;
         margin: 0 auto;
-        padding: $theme-spacing-half;
-
-        @include from($tablet) {
-            padding: $theme-spacing-half $theme-spacing;
-        }
-
-        @include from($widescreen) {
-            padding: $theme-spacing $theme-spacing-oneandhalf;
-        }
     }
 
     &__logo-image {
@@ -52,7 +39,9 @@
 
         > a {
             img {
-                min-width: 180px;
+                @include from($tablet) {
+                    min-width: 200px;
+                }
             }
 
             &:focus {
@@ -99,11 +88,5 @@
 
     .popup__label {
         color: $white;
-    }
-
-    &__brand {
-        display: flex;
-        min-width: 8rem;
-        max-width: 10rem;
     }
 }
