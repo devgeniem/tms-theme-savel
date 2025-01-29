@@ -41,15 +41,8 @@ class AlterImageFields {
             $image_shape = ( new \Geniem\ACF\Field\Select( $s['image_shape']['title'] ) )
                 ->set_key( 'image_image_shape' )
                 ->set_name( 'image_shape' )
-                ->set_choices( [
-                    'default'                         => 'Ei muotoa',
-                    'shape shape--summertime-sadness' => 'Apila',
-                    'shape shape--drop'               => 'Pisara',
-                    'shape shape--soft-flower'        => 'Nelireunainen kukka',
-                    'shape shape--flower'             => 'Kukka',
-                    'shape shape--polygon'            => 'Monikulmio',
-                    'shape shape--rainbow'            => 'Sateenkaari',
-                ] );
+                ->set_instructions( $s['image_shape']['instructions'] )
+                ->set_choices( \apply_filters( 'tms_afc_image_shape_choices', [] ) );
 
             $fields[] = $image_shape;
         }
