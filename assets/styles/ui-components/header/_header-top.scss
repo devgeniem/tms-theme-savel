@@ -10,10 +10,11 @@
     color: $navbar-item-navbar-link-color;
     margin: 0 $theme-spacing-half;
     border-radius: $theme-spacing-three-quarters;
-    padding: $theme-spacing;
+    padding: $theme-spacing 0;
 
     @include from($tablet) {
         margin: 0 $theme-spacing-oneandhalf;
+        padding: $theme-spacing;
     }
 
     @include from($widescreen) {
@@ -38,7 +39,9 @@
 
         > a {
             img {
-                min-width: 200px;
+                @include from($tablet) {
+                    min-width: 200px;
+                }
             }
 
             &:focus {
