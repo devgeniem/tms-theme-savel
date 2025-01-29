@@ -22,12 +22,12 @@
             <p class="mt-0 mb-3 has-text-white is-family-secondary">
                 {event.normalized.price_title|html} {price|html}
             </p>
-            {?.info_url.title}
+            {?.info_url.url}
             <a href="{.info_url.url|url}" target="_blank"
                 class="is-inline-block is-align-self-center button is-outlined-invert mt-3">
-                {.info_url.title|html}
+                {event.buy_ticket_string|html}
             </a>
-            {/.info_url.title}
+            {/.info_url.url}
         {/event.normalized.price}
     {/event.normalized.price}
 </div>
