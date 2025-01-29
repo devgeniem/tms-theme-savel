@@ -25,7 +25,7 @@
             {?.info_url.title}
             <a href="{.info_url.url|url}" target="_blank"
                 class="is-inline-block is-align-self-center button is-outlined-invert mt-3">
-                {.info_url.title|html}
+                {event.buy_ticket_string|html}
             </a>
             {/.info_url.title}
         {/event.normalized.price}
