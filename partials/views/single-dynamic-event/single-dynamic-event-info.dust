@@ -1,35 +1,74 @@
-{?event.normalized.date}
-    <div class="info-group column is-8 is-offset-2 has-border-none">
-        {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.date_title template_classes=template_classes.info_group_title icon="date" /}
+{?event.normalized.recurring}
+    {?event.normalized.date}
+        <div class="info-group column is-8 is-offset-2 has-border-none">
+            {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.date_title template_classes=template_classes.info_group_title icon="date" /}
 
-        <p class="info-group__description m-0 has-text-small has-text-small pt-1 pr-4 pb-2 pl-4">
-            {event.normalized.date|s}
-        </p>
-    </div>
-{/event.normalized.date}
+            <div class="pt-3 pb-2">
+                {?event.normalized.dates}
+                    {#event.normalized.dates}
+                        <p class="info-group__description m-0 has-text-small has-text-small pt-1 pr-4 pb-2 pl-4">
+                            {date|html}
+                        </p>
+                    {/event.normalized.dates}
+                {/event.normalized.dates}
 
-{?event.normalized.time}
-    <div class="info-group column is-8 is-offset-2 has-border-none">
-        {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.time_title template_classes=template_classes.info_group_title icon="time" /}
+                {?event.normalized.entries}
+                    {#event.normalized.entries}
+                        <p class="info-group__description m-0 has-text-small has-text-small pt-1 pr-4 pb-2 pl-4">
+                            {date|html}
+                        </p>
+                    {/event.normalized.entries}
+                {/event.normalized.entries}
+            </div>
+        </div>
+    {/event.normalized.date}
+{:else}
+    {?event.normalized.date}
+        <div class="info-group column is-8 is-offset-2 has-border-none">
+            {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.date_title template_classes=template_classes.info_group_title icon="date" /}
 
-        <p class="info-group__description m-0 has-text-small has-text-small pt-1 pr-4 pb-2 pl-4">
-            {event.normalized.time|html}
-        </p>
-    </div>
-{/event.normalized.time}
+            <p class="info-group__description m-0 has-text-small has-text-small pt-1 pr-4 pb-2 pl-4">
+                {event.normalized.date|html}
+            </p>
+        </div>
+    {/event.normalized.date}
+    {?event.normalized.time}
+        <div class="info-group column is-8 is-offset-2 has-border-none">
+            {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.time_title template_classes=template_classes.info_group_title icon="time" /}
 
-{?event.normalized.location}
+            <p class="info-group__description m-0 has-text-small has-text-small pt-1 pr-4 pb-2 pl-4">
+                {event.normalized.time|html}
+            </p>
+        </div>
+    {/event.normalized.time}
+{/event.normalized.recurring}
+
+{^event.normalized.multiple_locations}
+    {?event.normalized.location}
+        <div class="info-group column is-8 is-offset-2 has-border-none">
+            {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.location_title template_classes=template_classes.info_group_title icon="location" /}
+
+            <div class="info-group__description has-text-small has-text-small pt-1 pr-4 pb-2 pl-4">
+                <p class="m-0">{event.normalized.location.name|html}</p>
+                <p class="m-0">{event.normalized.location.description|html}</p>
+                <p class="m-0">{event.normalized.location.extra_info|html}</p>
+                {>"ui/link" link=event.normalized.location.info_url classes="is-inline-block mt-2 has-text-weight-bold" /}
+            </div>
+        </div>
+    {/event.normalized.location}
+{/event.normalized.multiple_locations}
+
+{?event.normalized.multiple_locations}
     <div class="info-group column is-8 is-offset-2 has-border-none">
         {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.location_title template_classes=template_classes.info_group_title icon="location" /}
 
         <div class="info-group__description has-text-small has-text-small pt-1 pr-4 pb-2 pl-4">
-            <p class="m-0">{event.normalized.location.name|html}</p>
-            <p class="m-0">{event.normalized.location.description|html}</p>
-            <p class="m-0">{event.normalized.location.extra_info|html}</p>
-            {>"ui/link" link=event.normalized.location.info_url classes="is-inline-block mt-2 has-text-weight-bold" /}
+            {#event.normalized.multiple_locations}
+                <p class="mb-2 mt-0">{name|html}</p>
+            {/event.normalized.multiple_locations}
         </div>
     </div>
-{/event.normalized.location}
+{/event.normalized.multiple_locations}
 
 {?event.normalized.price}
     <div class="info-group column is-8 is-offset-2 has-border-none">
@@ -38,10 +77,10 @@
         <div class="info-group__description has-text-small has-text-small pt-1 pr-4 pb-2 pl-4">
             {#event.normalized.price}
                 <p class="m-0">
-                    {price|s}
+                    {price|html}
                 </p>
                 <p class="m-0">
-                    {description|s}
+                    {description|html}
                 </p>
                 {>"ui/link" link=info_url classes="is-inline-block mt-2 has-text-weight-bold" /}
             {/event.normalized.price}
@@ -97,7 +136,7 @@
 {?event.normalized.virtual_event_link}
     <div class="info-group has-border-none">
         <div class="info-group__description pt-1 pr-4 pb-2 pl-4">
-            {>"ui/button-link" link=event.normalized.virtual_event_link classes="is-primary mt-3 {template_classes.info_button|s}" icon="chevron-right" icon_classes="icon--medium" /}
+            {>"ui/button-link" link=event.normalized.virtual_event_link classes="is-primary mt-3 {template_classes.info_button|attr}" icon="chevron-right" icon_classes="icon--medium" /}
         </div>
     </div>
 {/event.normalized.virtual_event_link}
