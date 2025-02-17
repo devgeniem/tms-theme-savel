@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Tampereen Sävel\n"
-"POT-Creation-Date: 2025-01-29 15:32+0200\n"
+"POT-Creation-Date: 2025-02-17 13:27+0200\n"
 "PO-Revision-Date: 2022-01-12 16:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -51,8 +51,44 @@ msgstr ""
 msgid "Send Comment"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:133
+#: models/page-combined-events-list.php:61
+msgid "No results"
+msgstr ""
+
+#: models/page-combined-events-list.php:249
+msgid "Filter by day"
+msgstr ""
+
+#: models/page-combined-events-list.php:250
+msgid "Change order"
+msgstr ""
+
+#: models/page-combined-events-list.php:251
+msgid "Order:"
+msgstr ""
+
+#: models/page-combined-events-list.php:286
+msgid "All days"
+msgstr ""
+
+#: models/page-combined-events-list.php:325
+msgid "All"
+msgstr ""
+
+#: models/page-combined-events-list.php:353
+msgid "Date"
+msgstr ""
+
+#: models/page-combined-events-list.php:358
+msgid "Alphabetical"
+msgstr ""
+
+#: models/single-manual-event-cpt.php:112
 msgid "Buy ticket"
+msgstr ""
+
+#: models/single-manual-event-cpt.php:113
+msgid "At"
 msgstr ""
 
 #: wp-content/mu-plugins/acf-codifier/src/Field/FlexibleContent.php:67
