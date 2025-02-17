@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Tampereen Sävel\n"
-"POT-Creation-Date: 2025-02-17 12:45+0200\n"
+"POT-Creation-Date: 2025-02-17 13:27+0200\n"
 "PO-Revision-Date: 2022-01-12 16:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -23,9 +23,28 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 
-#: assets/dist/vendor.js:4630
-msgctxt "text direction"
-msgid "ltr"
+#: assets/dist/vendor.js:1
+msgid "entries"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "values"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "keys"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "Wrong index!"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "Wrong offset!"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "Wrong length!"
 msgstr ""
 
 #: lib/ThemeCustomizationController.php:135
@@ -64,11 +83,11 @@ msgstr ""
 msgid "Alphabetical"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:115
+#: models/single-manual-event-cpt.php:112
 msgid "Buy ticket"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:116
+#: models/single-manual-event-cpt.php:113
 msgid "At"
 msgstr ""
 
