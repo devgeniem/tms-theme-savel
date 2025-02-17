@@ -267,13 +267,34 @@ class PageCombinedEventsList extends PageEventsSearch {
         \remove_action( 'pre_get_posts', [ __CLASS__, 'modify_event_query' ] );
 
         // Query for all manual events to get all available dates
-        $dates_query = new \WP_Query( [
+        $dates_args = [
             'post_type'      => PostType\ManualEvent::SLUG,
             'posts_per_page' => -1,
             'meta_key'       => 'start_datetime',
             'orderby'        => 'meta_value',
             'order'          => 'ASC',
-        ] );
+        ];
+
+        // Check if category is selected
+        $cat = self::get_category_query_var();
+        if ( ! empty( $cat ) ) {
+            $dates_args = [
+                'post_type'      => PostType\ManualEvent::SLUG,
+                'posts_per_page' => -1,
+                'meta_key'       => 'start_datetime',
+                'orderby'        => 'meta_value',
+                'order'          => 'ASC',
+                'tax_query'      => [
+                    [
+                        'taxonomy' => 'manual-event-category',
+                        'field'    => 'slug',
+                        'terms'    => $cat,
+                    ],
+                ]
+            ];
+        }
+
+        $dates_query = new \WP_Query( $dates_args );
 
         // Add query modifications back
         \add_action( 'pre_get_posts', [ __CLASS__, 'modify_event_query' ] );
