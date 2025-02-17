@@ -3,6 +3,7 @@
 namespace TMS\Theme\Savel;
 
 use Closure;
+use PageCombinedEventsList;
 use TMS\Theme\Base\Interfaces\Controller;
 
 /**
@@ -29,6 +30,11 @@ class ThemeSupports implements Controller {
             $this,
             'acf_image_shape_choices',
         ] ), 10, 3 );
+
+        \add_filter(
+            'query_vars',
+            Closure::fromCallable( [ $this, 'query_vars' ] )
+        );
     }
 
         /**
@@ -46,5 +52,20 @@ class ThemeSupports implements Controller {
             'shape shape--polygon'            => 'Monikulmio',
             'shape shape--rainbow'            => 'Sateenkaari',
         ];
+    }
+
+    /**
+     * Append custom query vars
+     *
+     * @param array $vars Registered query vars.
+     *
+     * @return array
+     */
+    protected function query_vars( $vars ) {
+        $vars[] = PageCombinedEventsList::DAY_QUERY_VAR;
+        $vars[] = PageCombinedEventsList::CATEGORY_QUERY_VAR;
+        $vars[] = PageCombinedEventsList::ORDER_QUERY_VAR;
+
+        return $vars;
     }
 }
