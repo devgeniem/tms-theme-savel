@@ -68,6 +68,12 @@ h3 {
 
 body {
     margin: 0;
+
+    p,
+    a,
+    ul {
+        font-weight: $weight-medium;
+    }
 }
 
 .has-text-large {
