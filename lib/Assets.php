@@ -34,6 +34,12 @@ class Assets extends \TMS\Theme\Base\Assets implements \TMS\Theme\Base\Interface
             return $mod_time;
 
         }, 10, 2 );
+
+        // Add icons
+        \add_action(
+            'wp_footer',
+            \Closure::fromCallable( [ $this, 'include_savel_svg_icons' ] )
+        );
     }
 
     /**
@@ -67,5 +73,16 @@ class Assets extends \TMS\Theme\Base\Assets implements \TMS\Theme\Base\Interface
      */
     public function base_theme_asset_path( $full_path, $file ): string { // phpcs:ignore
         return \get_template_directory_uri() . '/assets/dist/' . $file;
+    }
+
+    /**
+     * Add SVG definitions to footer.
+     */
+    private function include_savel_svg_icons() : void {
+        $svg_icons_path = \get_stylesheet_directory() . '/assets/dist/icons-savel.svg';
+
+        if ( is_file( $svg_icons_path ) ) {
+            include_once $svg_icons_path;
+        }
     }
 }

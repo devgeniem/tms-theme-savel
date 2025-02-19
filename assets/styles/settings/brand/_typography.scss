@@ -76,6 +76,14 @@ body {
     }
 }
 
+// External link icon
+a .icon.icon--medium.ml-1 {
+    height: 1.125rem !important;
+    width: 1.125rem !important;
+    margin-left: 0 !important;
+    vertical-align: middle;
+}
+
 .has-text-large {
     font-size: 1.25rem;
     font-weight: $weight-medium;
