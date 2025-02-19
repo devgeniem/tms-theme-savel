@@ -46,7 +46,7 @@ class SingleManualEventCpt extends PageEvent {
      * @return string
      */
     public function hero_image_credits() : ?string {
-        if ( ! has_post_thumbnail() ) {
+        if ( ! \has_post_thumbnail() ) {
             return Settings::get_setting( 'events_default_image_credits' ) ?? '';
         }
 
@@ -110,7 +110,10 @@ class SingleManualEventCpt extends PageEvent {
             'normalized'               => ManualEvent::normalize_event( $event ),
             'orig'                     => $event,
             'buy_ticket_string'        => \__( 'Buy ticket', 'tms-theme-savel' ),
-            'time_prefix'              => \__( 'At', 'tms-theme-savel' ),
+            'time_prefix'              => \__( 'at', 'tms-theme-savel' ),
+            'program_title'            => \__( 'Program', 'tms-theme-savel' ),
+            'artists_title'            => \__( 'Artists', 'tms-theme-savel' ),
+            'links_title'              => \__( 'Links', 'tms-theme-savel' ),
             'location_price_separator' => $event_location ? ', ' : '',
             'event_price'              => $event_price,
         ];

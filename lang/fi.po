@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Tampereen Sävel\n"
-"POT-Creation-Date: 2025-02-17 13:27+0200\n"
-"PO-Revision-Date: 2025-02-17 13:30+0200\n"
+"POT-Creation-Date: 2025-02-18 14:06+0200\n"
+"PO-Revision-Date: 2025-02-18 14:06+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -15,9 +15,9 @@ msgstr ""
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;"
-"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;"
-"esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
@@ -67,19 +67,19 @@ msgstr "Muuta järjestystä"
 msgid "Order:"
 msgstr "Järjestys:"
 
-#: models/page-combined-events-list.php:286
+#: models/page-combined-events-list.php:307
 msgid "All days"
 msgstr "Kaikki päivät"
 
-#: models/page-combined-events-list.php:325
+#: models/page-combined-events-list.php:346
 msgid "All"
 msgstr "Kaikki"
 
-#: models/page-combined-events-list.php:353
+#: models/page-combined-events-list.php:374
 msgid "Date"
 msgstr "Päivämäärä"
 
-#: models/page-combined-events-list.php:358
+#: models/page-combined-events-list.php:379
 msgid "Alphabetical"
 msgstr "Aakkosjärjestys"
 
@@ -88,8 +88,20 @@ msgid "Buy ticket"
 msgstr "Osta lippu"
 
 #: models/single-manual-event-cpt.php:113
-msgid "At"
-msgstr "Klo"
+msgid "at"
+msgstr "klo"
+
+#: models/single-manual-event-cpt.php:114
+msgid "Program"
+msgstr "Ohjelma"
+
+#: models/single-manual-event-cpt.php:115
+msgid "Artists"
+msgstr "Esittäjät"
+
+#: models/single-manual-event-cpt.php:116
+msgid "Links"
+msgstr "Linkit"
 
 #: wp-content/mu-plugins/acf-codifier/src/Field/FlexibleContent.php:67
 #: wp-content/mu-plugins/acf-codifier/src/Field/Repeater.php:60
@@ -147,3 +159,6 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://hiondigital.com"
 msgstr ""
+
+#~ msgid "At"
+#~ msgstr "Klo"

@@ -41,6 +41,12 @@
             position: relative;
             background-color: $color-savel-lightgreen;
 
+            .info-group__description {
+                > p:first-of-type {
+                    margin-top: 0;
+                }
+            }
+
             &::before {
                 content: '';
                 display: block;
