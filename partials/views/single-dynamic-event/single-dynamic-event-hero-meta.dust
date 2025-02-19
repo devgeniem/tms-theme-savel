@@ -2,7 +2,9 @@
     <div class="is-flex is-flex-direction-row is-justify-content-center">
         <p class="mt-0 mb-3 h2 has-text-white is-family-secondary">
             {?event.normalized.date}
-                <span class="is-capitalized">{event.weekday_prefix|html}</span>
+                {?event.weekday_prefix}
+                    <span class="is-capitalized">{event.weekday_prefix|html}</span>
+                {/event.weekday_prefix}
                 {event.normalized.date|html}
             {/event.normalized.date}
 
