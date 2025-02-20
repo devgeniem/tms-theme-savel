@@ -20,8 +20,8 @@ $color-savel-brown: #1F0202;
 $color-savel-light-brown: #5F3326;
 $savel-gradient-green: linear-gradient( 315deg, $color-savel-darkgreen 0%, $color-savel-green 100% );
 
-$color-savel-button: #093A78;
-$color-savel-button-hover: #1559AD;
+$color-savel-button: $color-savel-darkgreen;
+$color-savel-button-hover: bulmaLighten($color-savel-darkgreen, 10);
 
 $color-tekstin-vari: #212936;
 $color-ui-border: #414141;
