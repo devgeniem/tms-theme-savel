@@ -72,6 +72,10 @@
             font-size: 1rem !important;
             font-weight: $weight-bold !important;
 
+            &:hover,
+            &:focus {
+                color: $color-savel-darkgreen !important;
+            }
         }
 
 
