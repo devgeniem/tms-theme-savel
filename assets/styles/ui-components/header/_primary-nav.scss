@@ -36,7 +36,7 @@
         }
     }
 
-    > .navbar-item,
+    > .navbar-item a,
     > .has-dropdown > div > .navbar-link {
         font-weight: $weight-bold !important;
         color: $navbar-item-navbar-link-color !important;
@@ -91,7 +91,6 @@
     .navbar-dropdown-items {
         .navbar-item {
             background-color: transparent !important;
-            font-weight: $weight-medium;
             border-bottom: none !important;
             padding: $theme-spacing-half !important;
 
