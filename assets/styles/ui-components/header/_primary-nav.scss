@@ -36,7 +36,7 @@
         }
     }
 
-    > .navbar-item,
+    > .navbar-item a,
     > .has-dropdown > div > .navbar-link {
         font-weight: $weight-bold !important;
         color: $navbar-item-navbar-link-color !important;
@@ -68,10 +68,14 @@
 
         a {
             font-family: $family-primary;
-            color: $color-savel-blue !important;
+            color: $color-savel-darkgreen !important;
             font-size: 1rem !important;
             font-weight: $weight-bold !important;
 
+            &:hover,
+            &:focus {
+                color: $color-savel-darkgreen !important;
+            }
         }
 
 
@@ -91,7 +95,6 @@
     .navbar-dropdown-items {
         .navbar-item {
             background-color: transparent !important;
-            font-weight: $weight-medium;
             border-bottom: none !important;
             padding: $theme-spacing-half !important;
 

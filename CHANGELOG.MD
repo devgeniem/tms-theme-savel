@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1110: Minor style changes
 - TMS-1106: Fix textblock button & image-caption color
 - TMS-1105: Increase article highlight excerpt size
 - TMS-1104: Change body font-weight & line-height

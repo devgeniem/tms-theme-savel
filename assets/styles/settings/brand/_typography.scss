@@ -217,6 +217,10 @@ main {
     }
 }
 
+.has-text-weight-bold * {
+    font-weight: $weight-bold !important;
+}
+
 .has-text-align-left {
     text-align: left;
 }

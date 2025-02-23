@@ -3,6 +3,10 @@
         a {
             text-decoration: underline;
         }
+
+        * {
+            font-weight: $weight-normal;
+        }
     }
 
     .image {
