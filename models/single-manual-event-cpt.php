@@ -1,7 +1,4 @@
 <?php
-/**
- *  Copyright (c) 2023. Geniem Oy
- */
 
 use TMS\Theme\Base\Logger;
 use TMS\Theme\Base\Settings;
@@ -49,7 +46,7 @@ class SingleManualEventCpt extends PageEvent {
      * @return string
      */
     public function hero_image_credits() : ?string {
-        if ( ! has_post_thumbnail() ) {
+        if ( ! \has_post_thumbnail() ) {
             return Settings::get_setting( 'events_default_image_credits' ) ?? '';
         }
 
@@ -102,35 +99,25 @@ class SingleManualEventCpt extends PageEvent {
             return null;
         }
 
-        // Change dates if recurring event
-        if ( $event->recurring_event ) {
-            $time_now = \current_datetime();
-            $timezone = new DateTimeZone( 'Europe/Helsinki' );
+        $event->recurring_event = false;
+        $event->end_datetime    = null;
 
-            foreach ( $event->dates as $date ) {
-                $event_start = new DateTime( $date['start'], $timezone );
-                $event_end   = new DateTime( $date['end'], $timezone );
-
-                // Return only ongoing or next upcoming event
-                if ( ( $time_now > $event_start && $time_now < $event_end ) || $time_now < $event_start ) {
-                    $event->start_datetime = $date['start'];
-                    $event->end_datetime   = $date['end'];
-                    break;
-                }
-            }
-
-            // Set latest dates if no upcoming date found
-            if ( empty( $event->start_datetime ) && empty( $event->end_datetime ) ) {
-                $last_dates            = end( $event->dates );
-                $event->start_datetime = $last_dates['start'];
-                $event->end_datetime   = $last_dates['end'];
-            }
-        }
+        $normalized_event = ManualEvent::normalize_event( $event );
+        $event_price      = $normalized_event['price'][0]['price'];
+        $event_location   = $normalized_event['location']['name'];
+        $weekday_prefix   = \date_i18n( 'D', strtotime( $event->start_datetime ) );
 
         return [
-            'normalized'        => ManualEvent::normalize_event( $event ),
-            'orig'              => $event,
-            'buy_ticket_string' => \__( 'Buy ticket', 'tms-theme-savel' ),
+            'normalized'               => $normalized_event,
+            'orig'                     => $event,
+            'buy_ticket_string'        => \__( 'Buy ticket', 'tms-theme-savel' ),
+            'time_prefix'              => \__( 'at', 'tms-theme-savel' ),
+            'program_title'            => \__( 'Program', 'tms-theme-savel' ),
+            'artists_title'            => \__( 'Artists', 'tms-theme-savel' ),
+            'links_title'              => \__( 'Links', 'tms-theme-savel' ),
+            'weekday_prefix'           => $weekday_prefix,
+            'location_price_separator' => $event_location ? ', ' : '',
+            'event_price'              => $event_price,
         ];
     }
 }

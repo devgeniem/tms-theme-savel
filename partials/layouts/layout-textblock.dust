@@ -9,7 +9,7 @@
                 {/title}
                 {text|kses}
                 {?link}
-                    {>"ui/button-link" classes="mt-4 {link_class|attr}" icon="chevron-right" icon_classes="icon--medium"  /}
+                    {>"ui/button-link" classes="mt-4 is-primary" icon="chevron-right" icon_classes="icon--medium"  /}
                 {/link}
             </div>
         </div>
