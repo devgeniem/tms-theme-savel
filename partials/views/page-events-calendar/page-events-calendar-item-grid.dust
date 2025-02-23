@@ -54,6 +54,9 @@
 
                 <p class="m-0 is-family-secondary">
                     {location.name|html}
+                    {?location_count.other_locations_string}
+                        {location_count.other_locations_string|html}
+                    {/location_count.other_locations_string}
                 </p>
 
                 </div>
