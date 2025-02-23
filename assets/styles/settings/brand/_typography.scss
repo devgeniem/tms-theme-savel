@@ -25,7 +25,7 @@ $sizes-desktop-calculated: get_calculated_sizes($sizes-desktop-base_size, $sizes
 
 $base-size: $sizes-desktop-base_size;
 $body-font-size: $base-size;
-$body-weight: 400;
+$body-weight: 500;
 
 $size-1: map-get($sizes-desktop-calculated, "h1");
 $size-2: map-get($sizes-desktop-calculated, "h2");
@@ -96,7 +96,7 @@ a .icon.icon--medium.ml-1 {
 @mixin breakpoint_typography($base, $calculated_sizes) {
     body {
         font-size: $base;
-        line-height: 1.775;
+        line-height: 1.5;
     }
 
     .has-text-lead {
@@ -198,6 +198,21 @@ main {
                 color: $color-savel-darkblue;
                 text-decoration: underline;
             }
+        }
+
+        > h2 + p,
+        > h3 + p,
+        > h4 + p,
+        > h5 + p,
+        > h6 + p {
+            margin-top: 0;
+        }
+
+        > h2 + h3,
+        > h3 + h4,
+        > h4 + h5,
+        > h5 + h6 {
+            margin-top: 1.2em;
         }
     }
 }

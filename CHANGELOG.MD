@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1104: Change body font-weight & line-height
 - TMS-1098:
     - Add filters to event-list template, changes to single event hero
     - Remove & add event fields, change single-event page layout
