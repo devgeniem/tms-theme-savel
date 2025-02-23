@@ -53,6 +53,20 @@
                                     {event.normalized.description|kses}
                                 </div>
 
+                                {?event.orig.event_video.video}
+                                    <div
+                                        class="video column {@eq key=event.orig.event_video.align value="default"}is-8-desktop is-offset-2-desktop{/eq} mt-4 mb-4 mt-8-tablet mb-8-tablet is-relative">
+
+                                        {?event.orig.event_video.alt_text}
+                                            <span class="is-sr-only">{event.orig.event_video.alt_text|html}</span>
+                                        {/event.orig.event_video.alt_text}
+
+                                        <div class="image is-16by9 is-embed-container">
+                                            {event.orig.event_video.video|s}
+                                        </div>
+                                    </div>
+                                {/event.orig.event_video.video}
+
                                 {?share_links}
                                     <div class="columns is-variable is-8-desktop">
                                         <div class="column is-offset-1-desktop">

@@ -1,103 +1,47 @@
-{?event.normalized.date}
+{?event.orig.event_custom_program}
     <div class="info-group column is-8 is-offset-2 has-border-none">
-        {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.date_title template_classes=template_classes.info_group_title icon="date" /}
+        {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.program_title template_classes=template_classes.info_group_title icon="location" /}
 
-        <p class="info-group__description m-0 has-text-small has-text-small pt-1 pr-4 pb-2 pl-4">
-            {event.normalized.date|s}
-        </p>
-    </div>
-{/event.normalized.date}
-
-{?event.normalized.time}
-    <div class="info-group column is-8 is-offset-2 has-border-none">
-        {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.time_title template_classes=template_classes.info_group_title icon="time" /}
-
-        <p class="info-group__description m-0 has-text-small has-text-small pt-1 pr-4 pb-2 pl-4">
-            {event.normalized.time|html}
-        </p>
-    </div>
-{/event.normalized.time}
-
-{?event.normalized.location}
-    <div class="info-group column is-8 is-offset-2 has-border-none">
-        {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.location_title template_classes=template_classes.info_group_title icon="location" /}
-
-        <div class="info-group__description has-text-small has-text-small pt-1 pr-4 pb-2 pl-4">
-            <p class="m-0">{event.normalized.location.name|html}</p>
-            <p class="m-0">{event.normalized.location.description|html}</p>
-            <p class="m-0">{event.normalized.location.extra_info|html}</p>
-            {>"ui/link" link=event.normalized.location.info_url classes="is-inline-block mt-2 has-text-weight-bold" /}
+        <div class="info-group__description pt-1 pr-4 pb-2 pl-4">
+            {event.orig.event_custom_program|kses}
         </div>
     </div>
-{/event.normalized.location}
+{/event.orig.event_custom_program}
 
-{?event.normalized.price}
+{?event.orig.event_custom_artists}
+    <div class="info-group column is-8 is-offset-2 has-border-none">
+        {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.artists_title template_classes=template_classes.info_group_title icon="location" /}
+
+        <div class="info-group__description pt-1 pr-4 pb-2 pl-4">
+            {event.orig.event_custom_artists|kses}
+        </div>
+    </div>
+{/event.orig.event_custom_artists}
+
+{?event.orig.event_custom_price}
     <div class="info-group column is-8 is-offset-2 has-border-none">
         {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.price_title template_classes=template_classes.info_group_title icon="euro" /}
 
-        <div class="info-group__description has-text-small has-text-small pt-1 pr-4 pb-2 pl-4">
-            {#event.normalized.price}
-                <p class="m-0">
-                    {price|s}
-                </p>
-                <p class="m-0">
-                    {description|s}
-                </p>
-                {>"ui/link" link=info_url classes="is-inline-block mt-2 has-text-weight-bold" /}
-            {/event.normalized.price}
+        <div class="info-group__description pt-1 pr-4 pb-2 pl-4">
+            {event.orig.event_custom_price|kses}
         </div>
     </div>
-{/event.normalized.price}
+{/event.orig.event_custom_price}
 
-{?event.normalized.link_sign_up}
-    <div class="info-group column is-8 is-offset-2">
-        {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.sign_up_title template_classes=template_classes.info_group_title icon="link" /}
-
-        <div class="info-group__description pt-3 pr-4 pb-2 pl-4">
-            <a href="{event.normalized.link_sign_up.url|url}" target="_blank" class="is-block">{event.normalized.link_sign_up.name|html}</a>
-            {>"ui/link" link=event.normalized.link_sign_up.url classes="is-inline-block mt-2 has-text-weight-bold" /}
-        </div>
-    </div>
-{/event.normalized.link_sign_up}
-
-{?event.normalized.provider}
+{?event.orig.event_custom_links}
     <div class="info-group column is-8 is-offset-2 has-border-none">
-        {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.provider_title template_classes=template_classes.info_group_title icon="bullhorn" /}
+        {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.links_title template_classes=template_classes.info_group_title icon="euro" /}
 
         <div class="info-group__description pt-1 pr-4 pb-2 pl-4">
-            <p class="m-0">{event.normalized.provider.name|html}</p>
-
-            {?event.normalized.provider.email}
-                <div>
-                    <a href="mailto:{event.normalized.provider.email|attr}"
-                       class="has-text-black">
-                        {event.normalized.provider.email|html}
-                    </a>
-                </div>
-            {/event.normalized.provider.email}
-
-            {?event.normalized.provider.phone}
-                <div>
-                    <a href="tel:{event.normalized.provider.phone|attr}"
-                       class="has-text-black">
-                        {event.normalized.provider.phone|html}
-                    </a>
-                </div>
-            {/event.normalized.provider.phone}
+            <ul class="is-unstyled">
+                {#event.orig.event_custom_links}
+                    <li>
+                        <a href="{event_custom_link.url|url}" target="{event_custom_link.target|attr}">
+                            {event_custom_link.title|html}
+                        </a>
+                    </li>
+                {/event.orig.event_custom_links}
+            </ul>
         </div>
     </div>
-
-    <div class="info-group column is-8 is-offset-2 has-border-none">
-        <div class="info-group__description pt-1 pr-4 pb-2 pl-4">
-            {>"ui/button-link" link=event.normalized.provider.link classes="is-primary mt-3" icon="chevron-right" icon_classes="icon--medium" /}
-        </div>
-    </div>
-{/event.normalized.provider}
-
-{?event.normalized.virtual_event_link}
-    <div class="info-group has-border-none">
-        <div class="info-group__description pt-1 pr-4 pb-2 pl-4">
-            {>"ui/button-link" link=event.normalized.virtual_event_link classes="is-primary mt-3 {template_classes.info_button|s}" icon="chevron-right" icon_classes="icon--medium" /}
-        </div>
-    </div>
-{/event.normalized.virtual_event_link}
+{/event.orig.event_custom_links}
