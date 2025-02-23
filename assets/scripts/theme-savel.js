@@ -2,6 +2,7 @@ import '../../../tms-theme-base/assets/scripts/main.js';
 import TimelineScroll from './timeline-scroll.js';
 import Common from '../../../tms-theme-base/assets/scripts/common';
 import '../styles/theme-savel.scss';
+import '../icons/index.js';
 
 const globalControllers = {
     Common,

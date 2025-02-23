@@ -110,7 +110,7 @@ const allModules = {
                     options: {
                         symbolId: 'icon-[name]',
                         extract: true,
-                        spriteFilename: 'icons.svg',
+                        spriteFilename: 'icons-savel.svg',
                     },
                 },
                 {
