@@ -7,16 +7,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1112: Add image caption & author name to timeline-components images
+
+## [1.1.2] - 2025-02-24
+
+- TMS-1110: Minor style changes
+- TMS-1106: Fix textblock button & image-caption color
+- TMS-1105: Increase article highlight excerpt size
+- TMS-1104: Change body font-weight & line-height
 - TMS-1098:
     - Add filters to event-list template, changes to single event hero
     - Remove & add event fields, change single-event page layout
     - Change external-link icon
     - Add weekday name to manual event hero
+
+## [1.1.1] - 2025-02-24
+
 - TMS-1100: Show multiple locations for events if available
-- TMS-1110: Minor style changes
-- TMS-1104: Change body font-weight & line-height
-- TMS-1105: Increase article highlight excerpt size
-- TMS-1106: Fix textblock button & image-caption color
 
 ## [1.1.0] - 2025-01-29
 
