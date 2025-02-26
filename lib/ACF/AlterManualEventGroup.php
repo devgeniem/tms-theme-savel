@@ -64,7 +64,7 @@ class AlterManualEventGroup {
                 'instructions' => '',
             ],
             'event_artists' => [
-                'label'        => 'Esittäjät',
+                'label'        => 'Esiintyjät',
                 'instructions' => '',
             ],
             'event_price'   => [
