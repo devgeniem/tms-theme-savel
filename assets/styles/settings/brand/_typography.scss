@@ -69,8 +69,8 @@ h3 {
 body {
     margin: 0;
 
-    p,
-    a,
+    p:not(h2 > p, h3 > p, h4 > p, h5 > p, h6 > p, .has-text-weight-bold > p),
+    a:not(h2 > a, h3 > a, h4 > a, h5 > a, h6 > a, .has-text-weight-bold > a),
     ul {
         font-weight: $weight-medium;
     }
