@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-1112: Add image caption & author name to timeline-components images
+- TMS-1118: Text changes
 
 ## [1.1.2] - 2025-02-24
 
