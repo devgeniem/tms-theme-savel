@@ -1,7 +1,10 @@
 .page {
     // Remove paddings for first component
-    &__hero-section + .section,
     &__hero-section:has(+ .section) {
+        padding-bottom: 0;
+    }
+
+    &__hero-section + .section {
         padding-top: 0;
     }
 
