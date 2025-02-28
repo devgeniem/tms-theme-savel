@@ -44,10 +44,10 @@ class KeyFiguresLayout extends Layout {
     public function add_layout_fields(): void {
         $strings = [
             'background_image'      => [
-                'label'        => 'Taustakuva',
+                'label' => 'Taustakuva',
             ],
             'text_background_image' => [
-                'label'        => 'Numerotekstin taustakuva',
+                'label' => 'Numerotekstin taustakuva',
             ],
         ];
 

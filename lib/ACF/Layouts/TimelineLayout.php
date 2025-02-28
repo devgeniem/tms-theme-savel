@@ -105,7 +105,6 @@ class TimelineLayout extends Layout {
             $content_field,
         ] );
 
-
         try {
             $this->add_fields(
                 \apply_filters(

@@ -16,7 +16,7 @@ class PageExtend extends BaseModel {
     /**
      * Hooks
      */
-    public function hooks() : void {
+    public function hooks(): void {
         \add_filter( 'tms/theme/breadcrumbs/show_breadcrumbs_in_header', fn() => false );
     }
 
@@ -25,7 +25,7 @@ class PageExtend extends BaseModel {
      *
      * @return int|null
      */
-    public function hero_image() : ?int {
+    public function hero_image(): ?int {
         return \has_post_thumbnail()
             ? \get_post_thumbnail_id()
             : null;
