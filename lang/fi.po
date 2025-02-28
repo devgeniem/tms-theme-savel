@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Tampereen Sävel\n"
-"POT-Creation-Date: 2025-02-18 14:06+0200\n"
-"PO-Revision-Date: 2025-02-20 14:43+0200\n"
+"POT-Creation-Date: 2025-02-26 16:42+0200\n"
+"PO-Revision-Date: 2025-02-26 16:42+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -83,23 +83,23 @@ msgstr "Päivämäärä"
 msgid "Alphabetical"
 msgstr "Aakkosjärjestys"
 
-#: models/single-manual-event-cpt.php:112
+#: models/single-manual-event-cpt.php:113
 msgid "Buy ticket"
 msgstr "Osta lippu"
 
-#: models/single-manual-event-cpt.php:113
+#: models/single-manual-event-cpt.php:114
 msgid "at"
 msgstr "klo"
 
-#: models/single-manual-event-cpt.php:114
-msgid "Program"
+#: models/single-manual-event-cpt.php:115
+msgid "Programme"
 msgstr "Ohjelma"
 
-#: models/single-manual-event-cpt.php:115
+#: models/single-manual-event-cpt.php:116
 msgid "Artists"
 msgstr "Esiintyjät"
 
-#: models/single-manual-event-cpt.php:116
+#: models/single-manual-event-cpt.php:117
 msgid "Links"
 msgstr "Linkit"
 
