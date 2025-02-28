@@ -52,6 +52,10 @@ class TimelineLayout extends Layout {
                 'label'        => 'Kuva',
                 'instructions' => '',
             ],
+            'image_caption'     => [
+                'label'        => 'Vapaaehtoinen kuvateksti',
+                'instructions' => '',
+            ],
             'year'     => [
                 'label'        => 'Vuosi',
                 'instructions' => 'Kirjoita vuosi-teksti ilman välilyöntejä, jotta ankkurilinkit toimii',
@@ -78,6 +82,11 @@ class TimelineLayout extends Layout {
             ->set_required()
             ->set_instructions( $strings['image']['instructions'] );
 
+        $image_caption_field = ( new Field\Text( $strings['image_caption']['label'] ) )
+            ->set_key( "{$key}_image_caption" )
+            ->set_name( 'image_caption' )
+            ->set_instructions( $strings['image_caption']['instructions'] );
+
         $year_field = ( new Field\Text( $strings['year']['label'] ) )
             ->set_key( "{$key}_year" )
             ->set_name( 'year' )
@@ -100,6 +109,7 @@ class TimelineLayout extends Layout {
 
         $repeater->add_fields( [
             $image_field,
+            $image_caption_field,
             $year_field,
             $title_field,
             $content_field,
