@@ -78,7 +78,7 @@ class Assets extends \TMS\Theme\Base\Assets implements \TMS\Theme\Base\Interface
     /**
      * Add SVG definitions to footer.
      */
-    private function include_savel_svg_icons() : void {
+    private function include_savel_svg_icons(): void {
         $svg_icons_path = \get_stylesheet_directory() . '/assets/dist/icons-savel.svg';
 
         if ( is_file( $svg_icons_path ) ) {

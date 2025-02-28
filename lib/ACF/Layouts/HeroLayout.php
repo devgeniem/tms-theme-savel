@@ -44,27 +44,27 @@ class HeroLayout extends Layout {
         $key = $this->get_key();
 
         $strings = [
-            'image'         => [
+            'image'       => [
                 'label'        => 'Kuva',
                 'instructions' => '',
             ],
-            'title'         => [
+            'title'       => [
                 'label'        => 'Otsikko',
                 'instructions' => '',
             ],
-            'title_image'         => [
+            'title_image' => [
                 'label'        => 'Otsikon taustakuva',
                 'instructions' => '',
             ],
-            'description'   => [
+            'description' => [
                 'label'        => 'Kuvaus',
                 'instructions' => '',
             ],
-            'link'          => [
+            'link'        => [
                 'label'        => 'Painike',
                 'instructions' => '',
             ],
-            'align'         => [
+            'align'       => [
                 'label'        => 'Tekstin tasaus',
                 'instructions' => '',
             ],

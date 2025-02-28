@@ -2,7 +2,7 @@
 
 namespace TMS\Theme\Savel;
 
-use \TMS\Theme\Base;
+use TMS\Theme\Base;
 /**
  * Class ACFController
  *
@@ -18,5 +18,4 @@ class ACFController extends Base\ACFController implements Base\Interfaces\Contro
     protected function get_base_dir(): string {
         return __DIR__ . '/ACF';
     }
-
 }

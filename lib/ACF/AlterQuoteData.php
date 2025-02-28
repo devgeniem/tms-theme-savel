@@ -52,7 +52,6 @@ class AlterQuoteData {
 
         return $data;
     }
-
 }
 
 ( new AlterQuoteData() );

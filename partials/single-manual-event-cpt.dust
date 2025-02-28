@@ -38,14 +38,14 @@
                         <div class="columns">
                             <div class="column">
                                 {?event.normalized.short_description}
-                                    <div class="entry__content is-content-grid mb-8 has-text-centered">
+                                    <div class="entry__content is-content-grid has-text-centered">
                                         <p class="mt-6 mb-6 has-text-large">
                                             {event.normalized.short_description|kses}
                                         </p>
                                     </div>
                                 {/event.normalized.short_description}
 
-                                <div class="entry__info-group pt-5 pb-5">
+                                <div class="entry__info-group pt-5 pb-5 mt-10">
                                     {>"views/single-dynamic-event/single-dynamic-event-info" /}
                                 </div>
 

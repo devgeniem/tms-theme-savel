@@ -37,12 +37,12 @@ class AlterKeyFiguresFields {
         ];
 
         $background_image = ( new \Geniem\ACF\Field\Image( $strings['background_image']['label'] ) )
-            ->set_key( "background_image" )
+            ->set_key( 'background_image' )
             ->set_name( 'background_image' )
             ->set_wrapper_width( 50 );
 
         $text_background_image = ( new \Geniem\ACF\Field\Image( $strings['text_background_image']['label'] ) )
-            ->set_key( "text_background_image" )
+            ->set_key( 'text_background_image' )
             ->set_name( 'text_background_image' )
             ->set_wrapper_width( 50 );
 

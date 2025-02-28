@@ -11,7 +11,7 @@
                         </h1>
 
                         {?description}
-                            <div class="mt-5">
+                            <div class="mt-5 has-text-centered">
                                 {description|kses}
                             </div>
                         {/description}

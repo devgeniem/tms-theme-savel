@@ -38,16 +38,16 @@ class KeyFiguresLayout extends Layout {
     /**
      * Add layout fields.
      *
-     * @return array
+     * @return void
      * @throws Exception In case of invalid option.
      */
     public function add_layout_fields(): void {
         $strings = [
             'background_image'      => [
-                'label'        => 'Taustakuva',
+                'label' => 'Taustakuva',
             ],
             'text_background_image' => [
-                'label'        => 'Numerotekstin taustakuva',
+                'label' => 'Numerotekstin taustakuva',
             ],
         ];
 

@@ -37,12 +37,12 @@ class ThemeSupports implements Controller {
         );
     }
 
-        /**
+    /**
      * ACF layout brand color field choices
      *
      * @return string[]
      */
-    private function acf_image_shape_choices() : array {
+    private function acf_image_shape_choices(): array {
         return [
             'default'                         => 'Ei muotoa',
             'shape shape--summertime-sadness' => 'Apila',

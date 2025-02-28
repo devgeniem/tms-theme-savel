@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1116: Fix for single event page hero price if free
+
 ## [1.1.2] - 2025-02-24
 
 - TMS-1110: Minor style changes
