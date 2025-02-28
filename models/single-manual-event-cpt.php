@@ -107,11 +107,11 @@ class SingleManualEventCpt extends PageEvent {
         $weekday_prefix            = \date_i18n( 'D', strtotime( $event->start_datetime ) );
         $normalized_event['price'] = [
             [
-                'price'       => $event->price_is_free
+                'price'    => $event->price_is_free
                     ? __( 'Free', 'tms-theme-base' )
                     : $event->price['price_price'],
-                'info_url'    => [
-                    'url'   => $event->price['price_info_url']['url'] ?? '',
+                'info_url' => [
+                    'url' => $event->price['price_info_url']['url'] ?? '',
                 ],
             ],
         ];

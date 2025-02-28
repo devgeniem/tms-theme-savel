@@ -79,7 +79,7 @@ class AlterManualEventGroup {
                 'label'        => 'Linkki',
                 'instructions' => '',
             ],
-            'event_video'    => [
+            'event_video'   => [
                 'label'        => 'Videoupotus',
                 'instructions' => '',
             ],

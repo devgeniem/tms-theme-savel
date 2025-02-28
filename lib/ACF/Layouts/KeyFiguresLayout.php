@@ -38,7 +38,7 @@ class KeyFiguresLayout extends Layout {
     /**
      * Add layout fields.
      *
-     * @return array
+     * @return void
      * @throws Exception In case of invalid option.
      */
     public function add_layout_fields(): void {

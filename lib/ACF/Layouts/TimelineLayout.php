@@ -48,7 +48,7 @@ class TimelineLayout extends Layout {
                 'label'        => 'Osiot',
                 'instructions' => '',
             ],
-            'image'     => [
+            'image'    => [
                 'label'        => 'Kuva',
                 'instructions' => '',
             ],
