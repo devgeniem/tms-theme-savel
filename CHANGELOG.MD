@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1115: Fix modal close-button color, add accordion-block partial to change font for description
 - TMS-1113: Remove top-padding for first component in page
 - TMS-1112: Add image caption & author name to timeline-components images
 
