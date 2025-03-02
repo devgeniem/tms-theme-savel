@@ -48,7 +48,7 @@ class TimelineLayout extends Layout {
                 'label'        => 'Osiot',
                 'instructions' => '',
             ],
-            'image'     => [
+            'image'    => [
                 'label'        => 'Kuva',
                 'instructions' => '',
             ],
@@ -114,7 +114,6 @@ class TimelineLayout extends Layout {
             $title_field,
             $content_field,
         ] );
-
 
         try {
             $this->add_fields(

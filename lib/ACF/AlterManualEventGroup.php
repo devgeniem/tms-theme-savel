@@ -79,7 +79,7 @@ class AlterManualEventGroup {
                 'label'        => 'Linkki',
                 'instructions' => '',
             ],
-            'event_video'    => [
+            'event_video'   => [
                 'label'        => 'Videoupotus',
                 'instructions' => '',
             ],
@@ -90,33 +90,33 @@ class AlterManualEventGroup {
                 ->set_placement( 'left' );
 
             $event_program_field = ( new Field\Wysiwyg( $strings['event_program']['label'] ) )
-                ->set_key( "fg_manual_event_fields_event_custom_program" )
+                ->set_key( 'fg_manual_event_fields_event_custom_program' )
                 ->set_name( 'event_custom_program' )
                 ->set_toolbar( [ 'bold', 'italic', 'link' ] )
                 ->disable_media_upload()
                 ->set_instructions( $strings['event_program']['instructions'] );
 
             $event_artists_field = ( new Field\Wysiwyg( $strings['event_artists']['label'] ) )
-                ->set_key( "fg_manual_event_fields_event_custom_artists" )
+                ->set_key( 'fg_manual_event_fields_event_custom_artists' )
                 ->set_name( 'event_custom_artists' )
                 ->set_toolbar( [ 'bold', 'italic', 'link' ] )
                 ->disable_media_upload()
                 ->set_instructions( $strings['event_artists']['instructions'] );
 
             $event_price_field = ( new Field\Wysiwyg( $strings['event_price']['label'] ) )
-                ->set_key( "fg_manual_event_fields_event_custom_price" )
+                ->set_key( 'fg_manual_event_fields_event_custom_price' )
                 ->set_name( 'event_custom_price' )
                 ->set_toolbar( [ 'bold', 'italic', 'link' ] )
                 ->disable_media_upload()
                 ->set_instructions( $strings['event_price']['instructions'] );
 
             $event_links_field = ( new Field\Repeater( $strings['event_links']['label'] ) )
-                ->set_key( "fg_manual_event_fields_event_custom_links" )
+                ->set_key( 'fg_manual_event_fields_event_custom_links' )
                 ->set_name( 'event_custom_links' )
                 ->set_instructions( $strings['event_links']['instructions'] );
 
             $event_link_field = ( new Field\Link( $strings['event_link']['label'] ) )
-                ->set_key( "fg_manual_event_fields_event_link" )
+                ->set_key( 'fg_manual_event_fields_event_link' )
                 ->set_name( 'event_custom_link' )
                 ->set_instructions( $strings['event_link']['instructions'] );
 
