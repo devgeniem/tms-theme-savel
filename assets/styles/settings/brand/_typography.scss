@@ -193,7 +193,8 @@ main {
 
 .entry {
     &__content {
-        > p {
+        > p,
+        > ul li {
             > a {
                 color: $color-savel-darkblue;
                 text-decoration: underline;
