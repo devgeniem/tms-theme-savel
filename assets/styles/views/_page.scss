@@ -1,7 +1,8 @@
 .page {
     // Remove paddings for first component
+    &__hero-section:has(+ .call-to-action),
     &__hero-section:has(+ .section) {
-        padding-bottom: 0;
+        padding-bottom: 0 !important;
     }
 
     &__hero-section + .section {
