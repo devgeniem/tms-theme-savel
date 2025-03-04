@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1113: Padding change for CTA-component if it's the first element
 - TMS-1118: Text changes
 
 ## [1.1.3] - 2025-03-03
