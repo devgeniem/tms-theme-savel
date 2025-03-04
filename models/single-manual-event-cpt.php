@@ -102,22 +102,30 @@ class SingleManualEventCpt extends PageEvent {
         $event->recurring_event = false;
         $event->end_datetime    = null;
 
-        $normalized_event = ManualEvent::normalize_event( $event );
-        $event_price      = $normalized_event['price'][0]['price'];
-        $event_location   = $normalized_event['location']['name'];
-        $weekday_prefix   = \date_i18n( 'D', strtotime( $event->start_datetime ) );
+        $normalized_event          = ManualEvent::normalize_event( $event );
+        $event_location            = $normalized_event['location']['name'];
+        $weekday_prefix            = \date_i18n( 'D', strtotime( $event->start_datetime ) );
+        $normalized_event['price'] = [
+            [
+                'price'    => $event->price_is_free
+                    ? __( 'Free', 'tms-theme-base' )
+                    : $event->price['price_price'],
+                'info_url' => [
+                    'url' => $event->price['price_info_url']['url'] ?? '',
+                ],
+            ],
+        ];
 
         return [
             'normalized'               => $normalized_event,
             'orig'                     => $event,
             'buy_ticket_string'        => \__( 'Buy ticket', 'tms-theme-savel' ),
             'time_prefix'              => \__( 'at', 'tms-theme-savel' ),
-            'program_title'            => \__( 'Program', 'tms-theme-savel' ),
+            'program_title'            => \__( 'Programme', 'tms-theme-savel' ),
             'artists_title'            => \__( 'Artists', 'tms-theme-savel' ),
             'links_title'              => \__( 'Links', 'tms-theme-savel' ),
             'weekday_prefix'           => $weekday_prefix,
             'location_price_separator' => $event_location ? ', ' : '',
-            'event_price'              => $event_price,
         ];
     }
 }

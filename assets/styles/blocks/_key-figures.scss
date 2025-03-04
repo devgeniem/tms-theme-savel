@@ -5,7 +5,7 @@
 // stylelint-disable declaration-no-important
 
 .key-figures {
-    &__number,
+    &__number p,
     &__description p {
         font-weight: $weight-bold !important;
         font-family: $family-secondary;

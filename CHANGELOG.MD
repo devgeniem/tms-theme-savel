@@ -8,7 +8,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-1113: Padding change for CTA-component if it's the first element
+- TMS-1118: Text changes
+
+## [1.1.3] - 2025-03-03
+
+- TMS-1116: Fix for single event page hero price if free
+- TMS-1115: Fix modal close-button color, add accordion-block partial to change font for description
 - TMS-1113: Remove top-padding for first component in page
+- TMS-1112: Add image caption & author name to timeline-components images
 
 ## [1.1.2] - 2025-02-24
 
