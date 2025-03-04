@@ -121,7 +121,7 @@ class SingleManualEventCpt extends PageEvent {
             'orig'                     => $event,
             'buy_ticket_string'        => \__( 'Buy ticket', 'tms-theme-savel' ),
             'time_prefix'              => \__( 'at', 'tms-theme-savel' ),
-            'program_title'            => \__( 'Program', 'tms-theme-savel' ),
+            'program_title'            => \__( 'Programme', 'tms-theme-savel' ),
             'artists_title'            => \__( 'Artists', 'tms-theme-savel' ),
             'links_title'              => \__( 'Links', 'tms-theme-savel' ),
             'weekday_prefix'           => $weekday_prefix,
