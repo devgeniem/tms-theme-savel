@@ -1,4 +1,9 @@
 main.main-content {
+    p > a {
+        color: $color-savel-darkblue;
+        text-decoration: underline;
+    }
+
     &::before {
         content: '';
         display: block;
