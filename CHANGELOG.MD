@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-1116: Fix for single event page hero price if free
 - TMS-1115: Fix modal close-button color, add accordion-block partial to change font for description
 - TMS-1122: Mobile fly-out menu style fix
+- TMS-1121: Link style fix
 
 ## [1.1.4] - 2025-03-05
 

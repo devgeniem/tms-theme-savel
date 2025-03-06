@@ -1,5 +1,6 @@
 main.main-content {
-    p > a {
+    p > a,
+    a.has-text-paragraph {
         color: $color-savel-darkblue;
         text-decoration: underline;
     }
