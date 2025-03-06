@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1122: Mobile fly-out menu style fix
+
 ## [1.1.4] - 2025-03-05
 
 - TMS-1119: Link style fixes

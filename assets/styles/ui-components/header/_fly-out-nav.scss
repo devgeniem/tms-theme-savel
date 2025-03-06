@@ -12,6 +12,7 @@
     }
 
     &__inner {
+        position: fixed;
         background-color: $color-savel-green !important;
         box-shadow: 0 .0588rem .5rem rgba($black, .1);
     }
