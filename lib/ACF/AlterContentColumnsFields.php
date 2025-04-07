@@ -35,7 +35,6 @@ class AlterContentColumnsFields {
         ];
 
         try {
-            unset( $fields['rows']->sub_fields['display_artist'] );
             $fields['rows']->sub_fields['layout']->set_wrapper_width( 50 );
             $fields['rows']->sub_fields['aspect_ratio']->set_wrapper_width( 50 );
             $fields['rows']->sub_fields['aspect_ratio']->set_instructions( $strings['aspect_ratio']['instructions'] );

@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-1113: Remove top-padding for first component in page
 - TMS-1116: Fix for single event page hero price if free
 - TMS-1115: Fix modal close-button color, add accordion-block partial to change font for description
+- TMS-1114: Change image-meta on cta- & content-columns components
+
+## [1.1.5] - 2025-03-12
+
 - TMS-1122: Mobile fly-out menu style fix
 - TMS-1121: Link style fix
 
