@@ -16,9 +16,7 @@
                             {/isset}
 
                             {?display_artist}
-                                {?image_title_and_artist}
-                                    <span class="is-block pt-2 pb-2 mb-0 {txt_color_class|attr}">{image_title_and_artist|html}</span>
-                                {/image_title_and_artist}
+                                {>"ui/image/image-meta-minimal" /}
                             {/display_artist}
                             {>"shared/layout-before-main-content" /}
                         </div>
