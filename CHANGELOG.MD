@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1114: Change image-meta on cta- & content-columns components
+
 ## [1.1.5] - 2025-03-12
 
 - TMS-1122: Mobile fly-out menu style fix
