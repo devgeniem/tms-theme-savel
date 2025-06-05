@@ -1,5 +1,9 @@
 main.main-content {
     p > a,
+    p > em > a,
+    p > i > a,
+    p > b > a,
+    p > strong > a,
     a.has-text-paragraph {
         color: $color-savel-darkblue;
         text-decoration: underline;
