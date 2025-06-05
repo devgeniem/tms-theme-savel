@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.9] - 2025-06-05
+
 - TMS-1168: Specific styles for link underlining
 
 ## [1.1.8] - 2025-05-14
