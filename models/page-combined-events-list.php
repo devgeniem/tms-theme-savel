@@ -123,25 +123,9 @@ class PageCombinedEventsList extends PageEventsSearch {
 
         if ( empty( $response ) ) {
             $response           = $this->do_get_events( $params );
-            // $response['events'] = array_merge(
-            //     $response['events'],
-            //     $this->get_manual_events()
-            // );
             $response['events'] = $this->get_manual_events();
 
-            // Sort events by start datetime objects.
-            // usort( $response['events'], function( $a, $b ) {
-            //     return $a['start_date_raw'] <=> $b['start_date_raw'];
-            // } );
-
             if ( ! empty( $response ) ) {
-                // \wp_cache_set(
-                //     $cache_key,
-                //     $response,
-                //     $cache_group,
-                //     MINUTE_IN_SECONDS * 15
-                // );
-
                 $this->set_pagination_data( count( $response['events'] ) );
 
                 $response['events'] = array_slice( $response['events'], $skip, \get_option( 'posts_per_page' ) );
@@ -161,15 +145,6 @@ class PageCombinedEventsList extends PageEventsSearch {
             'post_type'      => PostType\ManualEvent::SLUG,
             'posts_per_page' => 200, // phpcs:ignore
             'meta_query'     => [
-                'relation'               => 'AND',
-                'start_date_clause'      => [
-                    [
-                        'key'     => 'start_datetime',
-                        'value'   => date( 'Y-m-d' ),
-                        'compare' => '>=',
-                        'type'    => 'DATE',
-                    ],
-                ],
                 'recurring_event_clause' => [
                     [
                         'key'   => 'recurring_event',
