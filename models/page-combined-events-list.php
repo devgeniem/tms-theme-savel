@@ -373,8 +373,7 @@ class PageCombinedEventsList extends PageEventsSearch {
         $day         = self::get_day_query_var();
         $cat         = self::get_category_query_var();
         $event_order = self::get_order_query_var();
-
-        $meta_query = [];
+        $meta_query  = [];
 
         if ( ! empty( $day ) ) {
             $start_of_day = date( 'Y-m-d H:i:s', strtotime( $day . ' 00:00:00' ) );
