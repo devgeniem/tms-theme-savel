@@ -374,10 +374,6 @@ class PageCombinedEventsList extends PageEventsSearch {
         $cat         = self::get_category_query_var();
         $event_order = self::get_order_query_var();
 
-        if ( empty( $day ) && empty( $cat ) && empty( $event_order ) ) {
-            return;
-        }
-
         $meta_query = [];
 
         if ( ! empty( $day ) ) {
@@ -415,6 +411,11 @@ class PageCombinedEventsList extends PageEventsSearch {
                 $wp_query->set( 'orderby', $event_order );
                 $wp_query->set( 'order', 'ASC' );
             }
+        } else {
+            // Default ordering by start_datetime
+            $wp_query->set( 'meta_key', 'start_datetime' );
+            $wp_query->set( 'orderby', 'meta_value_num' );
+            $wp_query->set( 'order', 'ASC' );
         }
 
         if ( ! empty( $meta_query ) ) {
