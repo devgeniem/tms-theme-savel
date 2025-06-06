@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1171: Allow past events to show on combined-events-list template
+
 ## [1.1.9] - 2025-06-05
 
 - TMS-1168: Specific styles for link underlining
