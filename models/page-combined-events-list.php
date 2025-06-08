@@ -122,7 +122,6 @@ class PageCombinedEventsList extends PageEventsSearch {
         $response    = \wp_cache_get( $cache_key, $cache_group );
 
         if ( empty( $response ) ) {
-            $response           = $this->do_get_events( $params );
             $response['events'] = $this->get_manual_events();
 
             if ( ! empty( $response ) ) {
@@ -404,7 +403,7 @@ class PageCombinedEventsList extends PageEventsSearch {
         if ( ! empty( $event_order ) ) {
             if ($event_order === 'date') {
                 $wp_query->set( 'meta_key', 'start_datetime' );
-                $wp_query->set( 'orderby', 'meta_value_num' );
+                $wp_query->set( 'orderby', 'meta_value' );
                 $wp_query->set( 'order', 'ASC' );
             } else {
                 $wp_query->set( 'orderby', $event_order );
@@ -413,7 +412,7 @@ class PageCombinedEventsList extends PageEventsSearch {
         } else {
             // Default ordering by start_datetime
             $wp_query->set( 'meta_key', 'start_datetime' );
-            $wp_query->set( 'orderby', 'meta_value_num' );
+            $wp_query->set( 'orderby', 'meta_value' );
             $wp_query->set( 'order', 'ASC' );
         }
 
