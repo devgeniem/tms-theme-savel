@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.10] - 2025-06-09
+
 - TMS-1171: Allow past events to show on combined-events-list template
 
 ## [1.1.9] - 2025-06-05
