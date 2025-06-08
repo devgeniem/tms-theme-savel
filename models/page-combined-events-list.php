@@ -122,26 +122,9 @@ class PageCombinedEventsList extends PageEventsSearch {
         $response    = \wp_cache_get( $cache_key, $cache_group );
 
         if ( empty( $response ) ) {
-            $response           = $this->do_get_events( $params );
-            // $response['events'] = array_merge(
-            //     $response['events'],
-            //     $this->get_manual_events()
-            // );
             $response['events'] = $this->get_manual_events();
 
-            // Sort events by start datetime objects.
-            // usort( $response['events'], function( $a, $b ) {
-            //     return $a['start_date_raw'] <=> $b['start_date_raw'];
-            // } );
-
             if ( ! empty( $response ) ) {
-                // \wp_cache_set(
-                //     $cache_key,
-                //     $response,
-                //     $cache_group,
-                //     MINUTE_IN_SECONDS * 15
-                // );
-
                 $this->set_pagination_data( count( $response['events'] ) );
 
                 $response['events'] = array_slice( $response['events'], $skip, \get_option( 'posts_per_page' ) );
@@ -161,15 +144,6 @@ class PageCombinedEventsList extends PageEventsSearch {
             'post_type'      => PostType\ManualEvent::SLUG,
             'posts_per_page' => 200, // phpcs:ignore
             'meta_query'     => [
-                'relation'               => 'AND',
-                'start_date_clause'      => [
-                    [
-                        'key'     => 'start_datetime',
-                        'value'   => date( 'Y-m-d' ),
-                        'compare' => '>=',
-                        'type'    => 'DATE',
-                    ],
-                ],
                 'recurring_event_clause' => [
                     [
                         'key'   => 'recurring_event',
@@ -398,12 +372,7 @@ class PageCombinedEventsList extends PageEventsSearch {
         $day         = self::get_day_query_var();
         $cat         = self::get_category_query_var();
         $event_order = self::get_order_query_var();
-
-        if ( empty( $day ) && empty( $cat ) && empty( $event_order ) ) {
-            return;
-        }
-
-        $meta_query = [];
+        $meta_query  = [];
 
         if ( ! empty( $day ) ) {
             $start_of_day = date( 'Y-m-d H:i:s', strtotime( $day . ' 00:00:00' ) );
@@ -434,12 +403,17 @@ class PageCombinedEventsList extends PageEventsSearch {
         if ( ! empty( $event_order ) ) {
             if ($event_order === 'date') {
                 $wp_query->set( 'meta_key', 'start_datetime' );
-                $wp_query->set( 'orderby', 'meta_value_num' );
+                $wp_query->set( 'orderby', 'meta_value' );
                 $wp_query->set( 'order', 'ASC' );
             } else {
                 $wp_query->set( 'orderby', $event_order );
                 $wp_query->set( 'order', 'ASC' );
             }
+        } else {
+            // Default ordering by start_datetime
+            $wp_query->set( 'meta_key', 'start_datetime' );
+            $wp_query->set( 'orderby', 'meta_value' );
+            $wp_query->set( 'order', 'ASC' );
         }
 
         if ( ! empty( $meta_query ) ) {
