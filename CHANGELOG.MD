@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1160: Fix elements focus outline thickness
+
 ## [1.1.10] - 2025-06-09
 
 - TMS-1171: Allow past events to show on combined-events-list template
