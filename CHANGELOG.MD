@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1163: Search results breadcrumbs accessibility fixes
+
 ## [1.1.10] - 2025-06-09
 
 - TMS-1171: Allow past events to show on combined-events-list template
