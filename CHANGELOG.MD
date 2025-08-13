@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.11] - 2025-08-13
+
 - TMS-1160: Fix elements focus outline thickness
 
 ## [1.1.10] - 2025-06-09
