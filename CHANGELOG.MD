@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-1163: Search results breadcrumbs accessibility fixes
 
+## [1.1.11] - 2025-08-13
+
+- TMS-1160: Fix elements focus outline thickness
+
 ## [1.1.10] - 2025-06-09
 
 - TMS-1171: Allow past events to show on combined-events-list template
