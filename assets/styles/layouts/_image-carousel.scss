@@ -24,26 +24,26 @@
         }
     }
 
-        .slick-arrow {
-            width: 2.5rem;
-            height: 2.5rem;
-        }
+    .slick-arrow {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
 
-        .slick-prev {
-            left: 2.5rem;
-            padding: 0 !important;
-        }
+    .slick-prev {
+        left: 2.5rem;
+        padding: 0 !important;
+    }
 
-        .slick-next {
-            right: 2.5rem;
-            padding: 0 !important;
-        }
+    .slick-next {
+        right: 2.5rem;
+        padding: 0 !important;
+    }
 
 
-    &__modal-control {
+    .image-carousel__modal-control {
 
         &.slick-arrow {
-            background-color: $black !important;
+            background-color: $white !important;
             border: none;
 
             .icon {
