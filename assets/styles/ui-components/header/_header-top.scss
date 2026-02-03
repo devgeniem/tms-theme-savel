@@ -80,6 +80,20 @@
             color: $white !important;
             font-size: $body-font-size;
         }
+
+        .button {
+            &,
+            &:hover,
+            &:focus,
+            &:active {
+                border-color: $white !important;
+                color: $white !important;
+
+                .icon {
+                    fill: $white !important;
+                }
+            }
+        }
     }
 
     &__popup {

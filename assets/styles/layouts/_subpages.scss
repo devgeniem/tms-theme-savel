@@ -3,8 +3,13 @@
         border: 1px solid $primary;
 
         &:not(.has-background-image) {
-            background: $savel-gradient-green !important;
-            color: $white !important;
+            &,
+            &:hover,
+            &:focus,
+            &:active {
+                background: $savel-gradient-green !important;
+                color: $white !important;
+            }
         }
 
         .icon {
