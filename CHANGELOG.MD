@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-1164: Change button hover & focus styles
 
+## [1.3.0] - 2025-12-17
+
+- TMS-1226: Change focus order on events-search form
+
 ## [1.2.0] - 2025-10-01
 
 - TMS-1201: Add iframe-field for video fields
