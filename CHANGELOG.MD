@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.4.1] - 2026-02-15
+
 - TMS-1164: Fix site header notice button hover
 
 ## [1.4.0] - 2026-02-03
