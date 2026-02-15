@@ -1,11 +1,11 @@
 .site-header-notice {
     button {
-        &.is-primary-invert {
-            border-color: $white !important;
-
+        &.is-outlined {
+            &,
             &:hover,
             &:focus {
-                border-color: $white !important;
+                border-color: $color-savel-white !important;
+                color: $color-savel-white !important;
             }
         }
 
