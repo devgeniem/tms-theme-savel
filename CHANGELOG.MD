@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-1158: Remove micromodal close attribute from mobile-nav container
+- TMS-1256: Add min-width for event filter select-elements
+
+## [1.4.1] - 2026-02-15
+
 - TMS-1164: Fix site header notice button hover
 
 ## [1.4.0] - 2026-02-03
