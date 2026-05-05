@@ -9,6 +9,39 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-1158: Remove micromodal close attribute from mobile-nav container
 
+## [1.4.3] - 2026-04-12
+
+- TMS-1260: Add sr-only text for opening image-blocks modal
+
+## [1.4.2] - 2026-03-16
+
+- TMS-1257: Add info text for category filters
+- TMS-1256: Add min-width for event filter select-elements
+
+## [1.4.1] - 2026-02-15
+
+- TMS-1164: Fix site header notice button hover
+
+## [1.4.0] - 2026-02-03
+
+- TMS-1164: Change button hover & focus styles
+
+## [1.3.0] - 2025-12-17
+
+- TMS-1226: Change focus order on events-search form
+
+## [1.2.0] - 2025-10-01
+
+- TMS-1201: Add iframe-field for video fields
+
+## [1.1.12] - 2025-09-08
+
+- TMS-1163: Search results breadcrumbs accessibility fixes
+
+## [1.1.11] - 2025-08-13
+
+- TMS-1160: Fix elements focus outline thickness
+
 ## [1.1.10] - 2025-06-09
 
 - TMS-1171: Allow past events to show on combined-events-list template

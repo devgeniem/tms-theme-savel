@@ -1,17 +1,17 @@
 .site-header-notice {
     button {
-        &.is-primary-invert {
-            border-color: $white !important;
-
+        &.is-outlined {
+            &,
             &:hover,
             &:focus {
-                border-color: $white !important;
+                border-color: $color-savel-white !important;
+                color: $color-savel-white !important;
             }
         }
 
         &:focus,
         .is-focus {
-            outline: .125rem dotted $white !important;
+            outline: .15rem dotted $white !important;
         }
     }
 }
