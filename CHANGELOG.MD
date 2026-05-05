@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.4.4] - 2026-05-05
+
 - TMS-1158: Remove micromodal close attribute from mobile-nav container
 
 ## [1.4.3] - 2026-04-12
